@@ -1,89 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[SilentSong]]></title>
   
-  <title>SilentSong</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SilentSong">
-<meta property="og:url" content="http://dmoneh.github.io/index.html">
-<meta property="og:site_name" content="SilentSong">
-<meta property="og:description">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SilentSong">
-<meta name="twitter:description">
+  <link href="/silentsong/atom.xml" rel="self"/>
+  <link href="http://dmoneh.github.io/"/>
+  <updated>2015-09-01T05:55:51.661Z</updated>
+  <id>http://dmoneh.github.io/</id>
   
-    <link rel="alternative" href="/silentsong/atom.xml" title="SilentSong" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/silentsong/css/style.css" type="text/css">
-  
-
-</head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">SilentSong</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/silentsong/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dmoneh.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-node-assert-for-unit-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/silentsong/2015/09/01/node-assert-for-unit-test/" class="article-date">
-  <time datetime="2015-09-01T05:15:36.000Z" itemprop="datePublished">2015-09-01</time>
-</a>
+  <author>
+    <name><![CDATA[wangpin]]></name>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  </author>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/silentsong/2015/09/01/node-assert-for-unit-test/">Nodejs 内置的 unit test 模块 - assert</a>
-    </h1>
+  <generator uri="http://hexo.io/">Hexo</generator>
   
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Nodejs 有一个叫做 <a href="https://nodejs.org/api/assert.html" target="_blank" rel="external">assert</a> 的模块，可以用来做简单的单元测试。 </p>
+  <entry>
+    <title><![CDATA[Nodejs 内置的 unit test 模块 - assert]]></title>
+    <link href="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/"/>
+    <id>http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/</id>
+    <published>2015-09-01T05:15:36.000Z</published>
+    <updated>2015-09-01T05:55:51.661Z</updated>
+    <content type="html"><![CDATA[<p>Nodejs 有一个叫做 <a href="https://nodejs.org/api/assert.html" target="_blank" rel="external">assert</a> 的模块，可以用来做简单的单元测试。 </p>
 <p>下面是一个小例子。</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">assert</span> = require('<span class="keyword">assert</span>');</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">ret</span> = <span class="keyword">assert</span>.ok(true); </span><br><span class="line">console.<span class="literal">log</span>('<span class="keyword">ret</span>: ' + <span class="keyword">ret</span>);</span><br></pre></td></tr></table></figure>
 <p>上面的例子中，assert.ok 用于检测测试值是否为 true。 很显然，测试应该通过。<br>运行，发现没有打印任何信息，而返回值 ret 也是 undefined 。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node <span class="number">001</span><span class="class">.asssert</span><span class="class">.js</span></span><br><span class="line">ret: undefined</span><br></pre></td></tr></table></figure></p>
@@ -96,156 +33,27 @@
 <p>这一次，程序没有正常退出。<br>看起来，我们可以通过测试程序的结束状态来得知全部测试是否通过。<br>至于每一个独立的测试是否通过，需要查看打印的信息。 但是，assert的打印信息并不是那么容易阅读的。 事实上，对于单元测试， 程序员只关心每个case是否通过，抛出下面这样的 stack 对与测试来说，并没有什么意义：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">assert.js:<span class="number">86</span></span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> assert.AssertionError(&#123;</span><br><span class="line">        ^</span><br><span class="line">AssertionError: <span class="literal">false</span> == <span class="literal">true</span></span><br><span class="line">    at Object.&lt;anonymous&gt; (d:\workspace\node\learn-node\<span class="number">001.</span>asssert.js:<span class="number">2</span>:<span class="number">18</span>)</span><br><span class="line">    at Module._compile (module.js:<span class="number">460</span>:<span class="number">26</span>)</span><br><span class="line">    at Object.Module._extensions..js (module.js:<span class="number">478</span>:<span class="number">10</span>)</span><br><span class="line">    at Module.load (module.js:<span class="number">355</span>:<span class="number">32</span>)</span><br><span class="line">    at Function.Module._load (module.js:<span class="number">310</span>:<span class="number">12</span>)</span><br><span class="line">    at Function.Module.runMain (module.js:<span class="number">501</span>:<span class="number">10</span>)</span><br><span class="line">    <span class="function">at <span class="title">startup</span> <span class="params">(node.js:<span class="number">129</span>:<span class="number">16</span>)</span></span><br><span class="line">    at node.js:814:3</span></span><br></pre></td></tr></table></figure>
 <p>理想的单元测试， 应该可以定义测试用例的名字， 应该在测试完成之后， 输出测试用例的名字和通过状态。 很显然， 单纯 assert 并不具备这样的功能。 所以，nodejs 的单元测试，还是需要依赖第三方测试框架，比如 <a href="https://mochajs.org/" target="_blank" rel="external">mocha</a>。 </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/" data-id="cie128kh900014gff3d6stqsq" class="article-share-link">Share</a>
-      
-        <a href="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-frontend-should-know-curl" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/silentsong/2015/08/27/frontend-should-know-curl/" class="article-date">
-  <time datetime="2015-08-27T04:22:43.000Z" itemprop="datePublished">2015-08-27</time>
-</a>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Nodejs 有一个叫做 <a href="https://nodejs.org/api/assert.html" target="_blank" rel="external">assert</a> 的模块，可以用来做简单的单元测试。 </p>
+<p>下面是一个小例子。</]]>
+    </summary>
     
-  </div>
-  <div class="article-inner">
+  </entry>
+  
+  <entry>
+    <title><![CDATA[前端也应该懂 curl]]></title>
+    <link href="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/"/>
+    <id>http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/</id>
+    <published>2015-08-27T04:22:43.000Z</published>
+    <updated>2015-09-01T05:15:16.509Z</updated>
+    <content type="html"><![CDATA[<p>有一天，pm告诉我，生产环境上有一个服务不能使用了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>有一天，pm告诉我，生产环境上有一个服务不能使用了。</p>
+]]>
+    </summary>
     
-    
-      <header class="article-header">
-        
+  </entry>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/silentsong/2015/08/27/frontend-should-know-curl/">前端也应该懂 curl</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有一天，pm告诉我，生产环境上有一个服务不能使用了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/" data-id="cie128kg700004gff43kwp06s" class="article-share-link">Share</a>
-      
-        <a href="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  
-    
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/silentsong/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/silentsong/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/silentsong/2015/09/01/node-assert-for-unit-test/">Nodejs 内置的 unit test 模块 - assert</a>
-          </li>
-        
-          <li>
-            <a href="/silentsong/2015/08/27/frontend-should-know-curl/">前端也应该懂 curl</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2015 wangpin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-<script>
-  var disqus_shortname = 'silentsong';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
-
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-
-  <link rel="stylesheet" href="/silentsong/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/silentsong/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-
-<script src="/silentsong/js/script.js" type="text/javascript"></script>
-
-    <div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'silentsong';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-  </div>
-</body>
-</html>
+</feed>
