@@ -90,7 +90,7 @@
     <link href="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/"/>
     <id>http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/</id>
     <published>2015-09-01T05:15:36.000Z</published>
-    <updated>2015-09-04T04:46:48.064Z</updated>
+    <updated>2015-09-04T13:14:01.015Z</updated>
     <content type="html"><![CDATA[<p>Nodejs 有一个叫做 <a href="https://nodejs.org/api/assert.html" target="_blank" rel="external">assert</a> 的模块，可以用来做简单的 断言。 </p>
 <p>下面是一个小例子。</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">assert</span> = require('<span class="keyword">assert</span>');</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">ret</span> = <span class="keyword">assert</span>.ok(true); </span><br><span class="line">console.<span class="literal">log</span>('<span class="keyword">ret</span>: ' + <span class="keyword">ret</span>);</span><br></pre></td></tr></table></figure>
@@ -110,6 +110,8 @@
 <p>下面是一个小例子。</p]]>
     </summary>
     
+      <category term="node,unit-test" scheme="http://dmoneh.github.io/tags/node-unit-test/"/>
+    
   </entry>
   
   <entry>
@@ -117,7 +119,7 @@
     <link href="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/"/>
     <id>http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/</id>
     <published>2015-08-27T04:22:43.000Z</published>
-    <updated>2015-09-04T08:10:15.188Z</updated>
+    <updated>2015-09-04T13:13:37.742Z</updated>
     <content type="html"><![CDATA[<p>有一天，pm询问我，生产环境上有一个 report 系统无法从客户端访问，到底是什么问题。</p>
 <p>我怀疑是 report 的服务器挂掉了，于是我打开浏览器，输入服务器的host，然后网页显示打不开。 </p>
 <p>然后，我自信的告诉 pm ， 应该是服务器上没有部署或者对应的服务器挂掉了，得去问问运维的人。 然后我发了一封邮件给运维的组。</p>
