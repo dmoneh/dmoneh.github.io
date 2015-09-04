@@ -3,7 +3,7 @@ date: 2015-09-01 13:15:36
 tags:
 ---
 
-Nodejs 有一个叫做 [assert](https://nodejs.org/api/assert.html) 的模块，可以用来做简单的单元测试。 
+Nodejs 有一个叫做 [assert](https://nodejs.org/api/assert.html) 的模块，可以用来做简单的 断言。 
 
 下面是一个小例子。
 
@@ -75,7 +75,8 @@ AssertionError: false == true
     at node.js:814:3
 ```
 
-理想的单元测试， 应该可以定义测试用例的名字， 应该在测试完成之后， 输出测试用例的名字和通过状态。 很显然， 单纯 assert 并不具备这样的功能。 所以，nodejs 的单元测试，还是需要依赖第三方测试框架，比如 [mocha](https://mochajs.org/)。 
+理想的单元测试，应该可以定义测试用例的名字， 应该在测试完成之后， 输出测试用例的名字和通过状态。 assert 并不能完成这样的工作， 但是它具备了基本的行为模式： 测试，输出测试状态。 所以， 它可以作为单元测试框架的断言库，事实上，[mocha](https://mochajs.org/)，一种比较流行的测试框架， 确实支持用 node assert 做断言库。
+
 
 
 
