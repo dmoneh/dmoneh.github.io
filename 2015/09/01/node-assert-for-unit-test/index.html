@@ -5,25 +5,25 @@
   
   <title>Nodejs 内置的 unit test 模块 - assert | SilentSong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Nodejs 有一个叫做 assert 的模块，可以用来做简单的单元测试。 
+  <meta name="description" content="Nodejs 有一个叫做 assert 的模块，可以用来做简单的 断言。 
 下面是一个小例子。
 123var assert = require(&apos;assert&apos;);var ret = assert.ok(true); console.log(&apos;ret: &apos; + ret);
-上面的例子中，assert.ok 用于检测测试值是否为 true。 很显然，测试应该通过。运行，发现没有打印任何信息，而返回">
+上面的例子中，assert.ok 用于检测测试值是否为 true。 很显然，测试应该通过。运行，发现没有打印任何信息，而返回值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nodejs 内置的 unit test 模块 - assert">
 <meta property="og:url" content="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/index.html">
 <meta property="og:site_name" content="SilentSong">
-<meta property="og:description" content="Nodejs 有一个叫做 assert 的模块，可以用来做简单的单元测试。 
+<meta property="og:description" content="Nodejs 有一个叫做 assert 的模块，可以用来做简单的 断言。 
 下面是一个小例子。
 123var assert = require(&apos;assert&apos;);var ret = assert.ok(true); console.log(&apos;ret: &apos; + ret);
-上面的例子中，assert.ok 用于检测测试值是否为 true。 很显然，测试应该通过。运行，发现没有打印任何信息，而返回">
-<meta property="og:updated_time" content="2015-09-01T05:55:51.661Z">
+上面的例子中，assert.ok 用于检测测试值是否为 true。 很显然，测试应该通过。运行，发现没有打印任何信息，而返回值">
+<meta property="og:updated_time" content="2015-09-04T04:46:48.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nodejs 内置的 unit test 模块 - assert">
-<meta name="twitter:description" content="Nodejs 有一个叫做 assert 的模块，可以用来做简单的单元测试。 
+<meta name="twitter:description" content="Nodejs 有一个叫做 assert 的模块，可以用来做简单的 断言。 
 下面是一个小例子。
 123var assert = require(&apos;assert&apos;);var ret = assert.ok(true); console.log(&apos;ret: &apos; + ret);
-上面的例子中，assert.ok 用于检测测试值是否为 true。 很显然，测试应该通过。运行，发现没有打印任何信息，而返回">
+上面的例子中，assert.ok 用于检测测试值是否为 true。 很显然，测试应该通过。运行，发现没有打印任何信息，而返回值">
   
     <link rel="alternative" href="/silentsong/atom.xml" title="SilentSong" type="application/atom+xml">
   
@@ -104,7 +104,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Nodejs 有一个叫做 <a href="https://nodejs.org/api/assert.html" target="_blank" rel="external">assert</a> 的模块，可以用来做简单的单元测试。 </p>
+        <p>Nodejs 有一个叫做 <a href="https://nodejs.org/api/assert.html" target="_blank" rel="external">assert</a> 的模块，可以用来做简单的 断言。 </p>
 <p>下面是一个小例子。</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">assert</span> = require('<span class="keyword">assert</span>');</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">ret</span> = <span class="keyword">assert</span>.ok(true); </span><br><span class="line">console.<span class="literal">log</span>('<span class="keyword">ret</span>: ' + <span class="keyword">ret</span>);</span><br></pre></td></tr></table></figure>
 <p>上面的例子中，assert.ok 用于检测测试值是否为 true。 很显然，测试应该通过。<br>运行，发现没有打印任何信息，而返回值 ret 也是 undefined 。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node <span class="number">001</span><span class="class">.asssert</span><span class="class">.js</span></span><br><span class="line">ret: undefined</span><br></pre></td></tr></table></figure></p>
@@ -116,12 +116,12 @@ var _hmt = _hmt || [];
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>echo <span class="variable">$?</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>这一次，程序没有正常退出。<br>看起来，我们可以通过测试程序的结束状态来得知全部测试是否通过。<br>至于每一个独立的测试是否通过，需要查看打印的信息。 但是，assert的打印信息并不是那么容易阅读的。 事实上，对于单元测试， 程序员只关心每个case是否通过，抛出下面这样的 stack 对与测试来说，并没有什么意义：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">assert.js:<span class="number">86</span></span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> assert.AssertionError(&#123;</span><br><span class="line">        ^</span><br><span class="line">AssertionError: <span class="literal">false</span> == <span class="literal">true</span></span><br><span class="line">    at Object.&lt;anonymous&gt; (d:\workspace\node\learn-node\<span class="number">001.</span>asssert.js:<span class="number">2</span>:<span class="number">18</span>)</span><br><span class="line">    at Module._compile (module.js:<span class="number">460</span>:<span class="number">26</span>)</span><br><span class="line">    at Object.Module._extensions..js (module.js:<span class="number">478</span>:<span class="number">10</span>)</span><br><span class="line">    at Module.load (module.js:<span class="number">355</span>:<span class="number">32</span>)</span><br><span class="line">    at Function.Module._load (module.js:<span class="number">310</span>:<span class="number">12</span>)</span><br><span class="line">    at Function.Module.runMain (module.js:<span class="number">501</span>:<span class="number">10</span>)</span><br><span class="line">    <span class="function">at <span class="title">startup</span> <span class="params">(node.js:<span class="number">129</span>:<span class="number">16</span>)</span></span><br><span class="line">    at node.js:814:3</span></span><br></pre></td></tr></table></figure>
-<p>理想的单元测试， 应该可以定义测试用例的名字， 应该在测试完成之后， 输出测试用例的名字和通过状态。 很显然， 单纯 assert 并不具备这样的功能。 所以，nodejs 的单元测试，还是需要依赖第三方测试框架，比如 <a href="https://mochajs.org/" target="_blank" rel="external">mocha</a>。 </p>
+<p>理想的单元测试，应该可以定义测试用例的名字， 应该在测试完成之后， 输出测试用例的名字和通过状态。 assert 并不能完成这样的工作， 但是它具备了基本的行为模式： 测试，输出测试状态。 所以， 它可以作为单元测试框架的断言库，事实上，<a href="https://mochajs.org/" target="_blank" rel="external">mocha</a>，一种比较流行的测试框架， 确实支持用 node assert 做断言库。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/" data-id="cie3poncp0002pwff1d4zlwh6" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/" data-id="cie5b02fz00045gffmgeu9321" class="article-share-link">Share</a>
       
         <a href="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -136,7 +136,7 @@ var _hmt = _hmt || [];
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          node-unit-test-by-mocha
+          Node 单元测试 - Mocha
         
       </div>
     </a>
@@ -165,8 +165,22 @@ var _hmt = _hmt || [];
     
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/node-unit-test/">node,unit-test</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/silentsong/tags/node-unit-test/" style="font-size: 10px;">node,unit-test</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -184,7 +198,7 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
-            <a href="/silentsong/2015/09/01/node-unit-test-by-mocha/">node-unit-test-by-mocha</a>
+            <a href="/silentsong/2015/09/01/node-unit-test-by-mocha/">Node 单元测试 - Mocha</a>
           </li>
         
           <li>
