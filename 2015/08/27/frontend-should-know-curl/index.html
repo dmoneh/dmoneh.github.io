@@ -5,16 +5,28 @@
   
   <title>前端也应该懂 curl | SilentSong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有一天，pm告诉我，生产环境上有一个服务不能使用了。">
+  <meta name="description" content="有一天，pm询问我，生产环境上有一个 report 系统无法从客户端访问，到底是什么问题。
+我怀疑是 report 的服务器挂掉了，于是我打开浏览器，输入服务器的host，然后网页显示打不开。 
+然后，我自信的告诉 pm ， 应该是服务器上没有部署或者对应的服务器挂掉了，得去问问运维的人。 然后我发了一封邮件给运维的组。
+过了一会，我收到来自一个资深同事的回复,他贴了一段 curl 的信息：
+12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端也应该懂 curl">
 <meta property="og:url" content="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/index.html">
 <meta property="og:site_name" content="SilentSong">
-<meta property="og:description" content="有一天，pm告诉我，生产环境上有一个服务不能使用了。">
-<meta property="og:updated_time" content="2015-09-01T05:15:16.509Z">
+<meta property="og:description" content="有一天，pm询问我，生产环境上有一个 report 系统无法从客户端访问，到底是什么问题。
+我怀疑是 report 的服务器挂掉了，于是我打开浏览器，输入服务器的host，然后网页显示打不开。 
+然后，我自信的告诉 pm ， 应该是服务器上没有部署或者对应的服务器挂掉了，得去问问运维的人。 然后我发了一封邮件给运维的组。
+过了一会，我收到来自一个资深同事的回复,他贴了一段 curl 的信息：
+12">
+<meta property="og:updated_time" content="2015-09-04T08:10:15.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端也应该懂 curl">
-<meta name="twitter:description" content="有一天，pm告诉我，生产环境上有一个服务不能使用了。">
+<meta name="twitter:description" content="有一天，pm询问我，生产环境上有一个 report 系统无法从客户端访问，到底是什么问题。
+我怀疑是 report 的服务器挂掉了，于是我打开浏览器，输入服务器的host，然后网页显示打不开。 
+然后，我自信的告诉 pm ， 应该是服务器上没有部署或者对应的服务器挂掉了，得去问问运维的人。 然后我发了一封邮件给运维的组。
+过了一会，我收到来自一个资深同事的回复,他贴了一段 curl 的信息：
+12">
   
     <link rel="alternative" href="/silentsong/atom.xml" title="SilentSong" type="application/atom+xml">
   
@@ -95,16 +107,26 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>有一天，pm告诉我，生产环境上有一个服务不能使用了。</p>
+        <p>有一天，pm询问我，生产环境上有一个 report 系统无法从客户端访问，到底是什么问题。</p>
+<p>我怀疑是 report 的服务器挂掉了，于是我打开浏览器，输入服务器的host，然后网页显示打不开。 </p>
+<p>然后，我自信的告诉 pm ， 应该是服务器上没有部署或者对应的服务器挂掉了，得去问问运维的人。 然后我发了一封邮件给运维的组。</p>
+<p>过了一会，我收到来自一个资深同事的回复,他贴了一段 curl 的信息：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">* Hostname was NOT found in DNS cache</span><br><span class="line">*   Trying xxxxx ...</span><br><span class="line">* Connected to web-proxy.houston.hp.com (xxxxx) port <span class="number">8080</span> (<span class="preprocessor">#<span class="number">0</span>)</span></span><br><span class="line">* Establish HTTP proxy tunnel to xxx:<span class="number">443</span></span><br><span class="line">&gt; CONNECT xxx:<span class="number">443</span> HTTP/<span class="number">1.1</span></span><br><span class="line">&gt; Host: xxx:</span><br><span class="line">&gt; User-Agent: curl/<span class="number">7.35</span><span class="number">.0</span></span><br><span class="line">&gt; Proxy-Connection: Keep-Alive</span><br><span class="line">&gt; </span><br><span class="line">&lt; HTTP/<span class="number">1.1</span> <span class="number">200</span> Connection established</span><br><span class="line">&lt; </span><br><span class="line">* Proxy replied OK to CONNECT request</span><br><span class="line">* successfully <span class="built_in">set</span> certificate verify locations:</span><br><span class="line">*   CAfile: none</span><br><span class="line">  CApath: /etc/ssl/certs</span><br><span class="line">* SSLv3, TLS handshake, <span class="function">Client <span class="title">hello</span> <span class="params">(<span class="number">1</span>)</span>:</span><br><span class="line">* SSLv3, TLS handshake, Server <span class="title">hello</span> <span class="params">(<span class="number">2</span>)</span>:</span><br><span class="line">* SSLv3, TLS handshake, <span class="title">CERT</span> <span class="params">(<span class="number">11</span>)</span>:</span><br><span class="line">* SSLv3, TLS handshake, Server <span class="title">finished</span> <span class="params">(<span class="number">14</span>)</span>:</span><br><span class="line">* SSLv3, TLS handshake, Client key <span class="title">exchange</span> <span class="params">(<span class="number">16</span>)</span>:</span><br><span class="line">* SSLv3, TLS change cipher, Client <span class="title">hello</span> <span class="params">(<span class="number">1</span>)</span>:</span><br><span class="line">* SSLv3, TLS handshake, <span class="title">Finished</span> <span class="params">(<span class="number">20</span>)</span>:</span><br><span class="line">* SSLv3, TLS change cipher, Client <span class="title">hello</span> <span class="params">(<span class="number">1</span>)</span>:</span><br><span class="line">* SSLv3, TLS handshake, <span class="title">Finished</span> <span class="params">(<span class="number">20</span>)</span>:</span><br><span class="line">* SSL connection <span class="keyword">using</span> AES128-SHA</span><br><span class="line">* Server certificate:</span><br><span class="line">*        subject: C</span>=US; ST=CA; L=Sunnyvale; O=Hewlett Packard; OU=HP Web Services; OU=PremiumSSL Wildcard; CN=*.xxx</span><br><span class="line">*        start date: <span class="number">2013</span>-<span class="number">09</span>-<span class="number">07</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> GMT</span><br><span class="line">*        expire date: <span class="number">2014</span>-<span class="number">09</span>-<span class="number">07</span> <span class="number">23</span>:<span class="number">59</span>:<span class="number">59</span> GMT</span><br><span class="line">*        issuer: C=GB; ST=Greater Manchester; L=Salford; O=COMODO CA Limited; CN=COMODO High-Assurance Secure Server CA</span><br><span class="line">*        SSL certificate verify result: <span class="function">certificate has <span class="title">expired</span> <span class="params">(<span class="number">10</span>)</span>, continuing anyway.</span><br><span class="line">&gt; GET /xxx/xxx/xxx?:embed</span>=no&amp;:customViews=yes&amp;devid=<span class="number">94663018</span>-baa2-<span class="number">11e3</span>-<span class="number">99</span>da-<span class="number">1</span>cc1de6f6c7e&amp;token=bearer%<span class="number">200</span>%<span class="number">2F</span>xjdNJ%<span class="number">2F</span>FTTeG3TSfxU93hYA HTTP/<span class="number">1.1</span></span><br><span class="line">&gt; User-Agent: curl/<span class="number">7.35</span><span class="number">.0</span></span><br><span class="line">&gt; Host: xxx</span><br><span class="line">&gt; Accept: *<span class="comment">/*</span><br><span class="line">&gt; </span><br><span class="line">&lt; HTTP/1.1 403 Forbidden</span><br><span class="line">* Server nginx/1.6.2 is not blacklisted</span><br><span class="line">&lt; Server: nginx/1.6.2</span><br><span class="line">&lt; Date: Thu, 27 Aug 2015 04:05:15 GMT</span><br><span class="line">&lt; Content-Length: 0</span><br><span class="line">&lt; Connection: keep-alive</span><br><span class="line">&lt; X-HP-DE<span class="doctag">BUG:</span> xxx :bearer 0/xjdNJ/FTTeG3TSfxU93hYA 403:Permission denied|</span><br><span class="line">&lt; </span><br><span class="line">* Connection #0 to host xxx left intact</span></span><br></pre></td></tr></table></figure>
+<p>然后他告诉我们，因为服务器的反向代理的黑名单机制，所以我们的访问都被拒绝了。 再然后， 问题修复。</p>
+<p>我深深的被 curl 这个命令折服了。简简单单的一条命令，但是却可以将网络的状况，路由的跳转一一告诉我们，让我们知道，问题大概出在哪里了。 而不是像我之前的做法，只是知道服务器有问题了，但是却并不明白问题是什么。 </p>
+<p>作为偏前端的开发，大多数时候，我们都不会接触到后台的服务器，不会了解到简简单单一个http请求，到底辗转多少次，才到达最终的服务。也不明白，看似一般的服务器不响应，其实可能有很多不同的原因。我们也确实没有精力和机会去探索后台服务器的拓扑结构。 但是， curl 命令给了我们这样的能力，可以从最熟悉的http开始，了解后台的构成，机制。 不仅仅是可以解决类似的问题。 而且，也可以开拓视野。仅仅只关注自己业务的部分，很多时候，是远远不够的。</p>
+<p><a href="http://curl.haxx.se/docs/manpage.html" target="_blank" rel="external">curl 参考</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/" data-id="cie5bkxeo0000bgff3i9yf9ew" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/" data-id="cie5d382d000014ffbzzv2omu" class="article-share-link">Share</a>
       
         <a href="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/silentsong/tags/curl/">curl</a></li></ul>
+
     </footer>
   </div>
   
@@ -142,7 +164,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/node-unit-test/">node,unit-test</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/curl/">curl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/node-unit-test/">node,unit-test</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -151,7 +173,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/silentsong/tags/node-unit-test/" style="font-size: 10px;">node,unit-test</a>
+      <a href="/silentsong/tags/curl/" style="font-size: 10px;">curl</a> <a href="/silentsong/tags/node-unit-test/" style="font-size: 10px;">node,unit-test</a>
     </div>
   </div>
 
