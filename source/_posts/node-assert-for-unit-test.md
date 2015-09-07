@@ -1,11 +1,10 @@
 title: Nodejs 内置的 unit test 模块 - assert
 date: 2015-09-01 13:15:36
 tags: node,unit-test
-excerpt: Node assert 断言模块，可以独立使用， 也可以在其他测试框架中作为断言模块。
 ---
 
 Nodejs 有一个叫做 [assert](https://nodejs.org/api/assert.html) 的模块，可以用来做简单的 断言。 
-
+<!--more-->
 下面是一个小例子。
 
 ```

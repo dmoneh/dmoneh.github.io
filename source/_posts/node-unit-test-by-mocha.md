@@ -1,10 +1,11 @@
 title: Node 单元测试 - Mocha
 date: 2015-09-01 16:17:24
 tags: node,unit-test
-excerpt： mocha 是一个基于 nodejs 的单元测试框架。
 ---
+
 ## 简介
 mocha 是一个基于 nodejs 的单元测试框架。 
+<!--more-->
 [mocha 官网](http://mochajs.org/)
 
 命名约定：
