@@ -1,6 +1,6 @@
 title: Nodejs 内置的 unit test 模块 - assert
 date: 2015-09-01 13:15:36
-tags: node,unit-test
+tags: node,unit test
 ---
 
 Nodejs 有一个叫做 [assert](https://nodejs.org/api/assert.html) 的模块，可以用来做简单的 断言。 

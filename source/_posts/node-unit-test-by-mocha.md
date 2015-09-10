@@ -1,6 +1,6 @@
 title: Node 单元测试 - Mocha
 date: 2015-09-01 16:17:24
-tags: node,unit-test
+tags: node
 ---
 
 ## 简介
