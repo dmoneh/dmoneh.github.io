@@ -69,7 +69,7 @@ theme: landscape
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@dmoneh:dmoneh/dmoneh.github.io
+  repo: git@dmoneh:dmoneh/slientsong
   branch: gh-pages
 
 disqus_shortname: silentsong
