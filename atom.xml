@@ -4,7 +4,7 @@
   
   <link href="/silentsong/atom.xml" rel="self"/>
   <link href="http://dmoneh.github.io/"/>
-  <updated>2015-09-10T05:01:56.111Z</updated>
+  <updated>2015-09-17T06:55:28.352Z</updated>
   <id>http://dmoneh.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://dmoneh.github.io/2015/09/10/use-curl/"/>
     <id>http://dmoneh.github.io/2015/09/10/use-curl/</id>
     <published>2015-09-10T03:31:28.000Z</published>
-    <updated>2015-09-10T05:01:56.111Z</updated>
+    <updated>2015-09-17T06:55:28.352Z</updated>
     <content type="html"><![CDATA[<h3 id="1-什么是_curl">1.什么是 curl</h3><p>curl 官方的说法是一种用来在客户端和服务器之间做数据传输的命令行。简单的说，你可以用下面这个命令，将百度首页的内容下载下来：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://baidu.com</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"refresh"</span> <span class="attribute">content</span>=<span class="value">"0;url=http://www.baidu.com/"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>以上就是下载的内容，如果你懂html的话，可以发现，百度的首页会自动跳转到 www.baidu.com 这个新地址。</p>
 <a id="more"></a>
@@ -40,8 +40,6 @@
 <p>  或者引用本地文件内容,比如token</p>
   <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$curl</span> -H <span class="string">"Authorization:$&#123;cat token.txt&#125;"</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
 <li><p>随意指定http method</p>
 <p>如果你不指定，默认就是GET。</p>
 <p>这是POST</p>
@@ -53,24 +51,25 @@
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -XPUT <span class="string">http:</span><span class="comment">//des.com -d <span class="label">xxx</span></span></span><br></pre></td></tr></table></figure>
 <p>-d 后面就是你想要put到<a href="http://des.com的数据，需要注意的是，对于一些数据，可能需要预先指定传输格式：" target="_blank" rel="external">http://des.com的数据，需要注意的是，对于一些数据，可能需要预先指定传输格式：</a><br>比如，对于图片，用 –data-binary，表示传输二进制数据。</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -XPUT http://des.com --<span class="preprocessor">data</span>-<span class="keyword">binary </span><span class="comment">@icon.jpg</span></span><br></pre></td></tr></table></figure>
+<p>这里的 @ 表示从指定文件中获取数据。</p>
+<p>对于json数据，除了指定 content-type之外，还要注意一下json格式。</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -XPOST -H <span class="string">"Content-Type: application/json"</span> http://des.com -d '&#123;<span class="string">"name"</span>:<span class="string">"silentsong"</span>&#125;'</span><br></pre></td></tr></table></figure>
+<p>上面json中的key和value都必须用双引号包装起来，整个json数据必须包含在单引号之中。</p>
 </li>
 </ul>
-<p>  这里的 @ 表示从指定文件中获取数据。</p>
 <ul>
 <li><p>form 支持</p>
 <p>curl支持上传一个form表单。比如最常见的登录表单</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl  -XPUT -F name=slientsong -F password=<span class="number">123</span> http:<span class="comment">//dmoneh.github.io/silentsong/login</span></span><br></pre></td></tr></table></figure>
+<p>有时候，表单中会有上传文件</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>curl -<span class="constant">XPUT </span>-<span class="constant">F </span>file=<span class="variable">@upload</span>.json <span class="symbol">http:</span>/<span class="regexp">/dmoneh.github.io/silentsong</span><span class="regexp">/files</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>   有时候，表单中会有上传文件</p>
-   <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>curl -<span class="constant">XPUT </span>-<span class="constant">F </span>file=<span class="variable">@upload</span>.json <span class="symbol">http:</span>/<span class="regexp">/dmoneh.github.io/silentsong</span><span class="regexp">/files</span></span><br></pre></td></tr></table></figure>
-<ul>
 <li><p>探查http交互情况</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$ curl -v -x <span class="string">http:</span><span class="comment">//myproxy:8080 http://baidu.com</span></span><br><span class="line"></span><br><span class="line"> * Adding <span class="string">handle:</span> <span class="string">conn:</span> <span class="number">0x652be0</span></span><br><span class="line"> * Adding <span class="string">handle:</span> <span class="string">send:</span> <span class="number">0</span></span><br><span class="line"> * Adding <span class="string">handle:</span> <span class="string">recv:</span> <span class="number">0</span></span><br><span class="line"> * <span class="string">Curl_addHandleToPipeline:</span> <span class="string">length:</span> <span class="number">1</span></span><br><span class="line"> * - Conn <span class="number">0</span> (<span class="number">0x652be0</span>) <span class="string">send_pipe:</span> <span class="number">1</span>, <span class="string">recv_pipe:</span> <span class="number">0</span></span><br><span class="line"> * About to connect() to proxy myproxy port <span class="number">8080</span></span><br><span class="line"> *   Trying <span class="number">10.0</span><span class="number">.0</span><span class="number">.1</span>...</span><br><span class="line"> * Connected to myproxy (<span class="number">10.0</span><span class="number">.0</span><span class="number">.1</span>) port <span class="number">808</span></span><br><span class="line"> &gt; GET <span class="string">http:</span><span class="comment">//baidu.com/ HTTP/1.1</span></span><br><span class="line"> &gt; User-<span class="string">Agent:</span> curl/<span class="number">7.30</span><span class="number">.0</span></span><br><span class="line"> &gt; <span class="string">Host:</span> baidu.com</span><br><span class="line"> &gt; <span class="string">Accept:</span> *<span class="comment">/*</span><br><span class="line"> &gt; Proxy-Connection: Keep-Alive</span><br><span class="line"> &gt;</span><br><span class="line"> &lt; HTTP/1.1 200 OK</span><br><span class="line"> &lt; Date: Wed, 09 Sep 2015 05:39:38 GMT</span><br><span class="line"> * Server Apache is not blacklisted</span><br><span class="line"> &lt; Server: Apache</span><br><span class="line"> &lt; Cache-Control: max-age=86400</span><br><span class="line"> &lt; Expires: Thu, 10 Sep 2015 05:39:38 GMT</span><br><span class="line"> &lt; Last-Modified: Tue, 12 Jan 2010 13:48:00 GMT</span><br><span class="line"> &lt; ETag: "51-4b4c7d90"</span><br><span class="line"> &lt; Accept-Ranges: bytes</span><br><span class="line"> &lt; Content-Length: 81</span><br><span class="line"> &lt; Content-Type: text/html</span><br><span class="line"> &lt; Proxy-Connection: Keep-Alive</span><br><span class="line"> &lt; Connection: Keep-Alive</span><br><span class="line"> &lt; Age: 83195</span><br><span class="line"> &lt;</span><br><span class="line"> &lt;html&gt;</span><br><span class="line"> &lt;meta http-equiv="refresh" content="0;url=http://www.baidu.co</span><br><span class="line"> &lt;/html&gt;</span><br><span class="line"> * Connection #0 to host myproxy left intact</span></span><br></pre></td></tr></table></figure>
+<p>仔细看一下上面的信息，&gt; 表示从本地发出的http 头信息，&lt; 表示远端返回的头信息，* 表示 curl额外提供的信息（非标准的http信息）。</p>
+<p>我们可以看到代理的一部分工作，接受我们的请求，返回请求数据。相当于一个网关。</p>
 </li>
 </ul>
-<p>  仔细看一下上面的信息，&gt; 表示从本地发出的http 头信息，&lt; 表示远端返回的头信息，* 表示 curl额外提供的信息（非标准的http信息）。</p>
-<p>  我们可以看到代理的一部分工作，接受我们的请求，返回请求数据。相当于一个网关。</p>
 <h3 id="3-_总结">3. 总结</h3><p>curl 是一个很有用的工具，一般人我不告诉的哦。</p>
 <p>下一步打算翻译一下 <a href="http://curl.haxx.se/docs/manpage.html" target="_blank" rel="external">curl man page</a>,做一些页面美化和排版，以方便使用。</p>
 <p>敬请关注。</p>
