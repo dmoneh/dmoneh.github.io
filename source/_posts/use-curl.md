@@ -43,7 +43,7 @@ $ curl -x http://proxy.com -o baidu.html http://baidu.com
 * 灵活的header
 
   可以随意的指定header ,一个
-    
+
     ```
     $ curl -H "name:Joyce"
     ```
@@ -55,17 +55,17 @@ $ curl -x http://proxy.com -o baidu.html http://baidu.com
     ```
     $curl -H "Authorization:${cat token.txt}"
     ```
-   
+
 * 随意指定http method
 
   如果你不指定，默认就是GET。
-  
+
   这是POST
   ```
   $ curl -XPOST
   ```
   -X表示指定method
-  
+
 * 发送数据
 
   可以将数据post或者put到远端。
@@ -74,33 +74,41 @@ $ curl -x http://proxy.com -o baidu.html http://baidu.com
   ```
   -d 后面就是你想要put到http://des.com的数据，需要注意的是，对于一些数据，可能需要预先指定传输格式：
   比如，对于图片，用 --data-binary，表示传输二进制数据。
-  
+
   ```
-  $ curl -XPUT http://des.com --data-binary @icon.jpg 
+  $ curl -XPUT http://des.com --data-binary @icon.jpg
   ```
-  
+
   这里的 @ 表示从指定文件中获取数据。
-  
+
+  对于json数据，除了指定 content-type之外，还要注意一下json格式。
+
+  ```
+  $ curl -XPOST -H "Content-Type: application/json" http://des.com -d '{"name":"silentsong"}'
+  ```
+  上面json中的key和value都必须用双引号包装起来，整个json数据必须包含在单引号之中。
+
+
  * form 支持
 
    curl支持上传一个form表单。比如最常见的登录表单
-    
+
    ```
-  	$ curl  -XPUT -F name=slientsong -F password=123 http://dmoneh.github.io/silentsong/login
+    $ curl  -XPUT -F name=slientsong -F password=123 http://dmoneh.github.io/silentsong/login
    ```
-   
+
    有时候，表单中会有上传文件
-   
+
    ```
    $ curl -XPUT -F file=@upload.json http://dmoneh.github.io/silentsong/files
    ```
-  
+
 
  * 探查http交互情况
-  
+
   ```
   $ curl -v -x http://myproxy:8080 http://baidu.com
-  
+
    * Adding handle: conn: 0x652be0
    * Adding handle: send: 0
    * Adding handle: recv: 0
@@ -134,14 +142,14 @@ $ curl -x http://proxy.com -o baidu.html http://baidu.com
    <meta http-equiv="refresh" content="0;url=http://www.baidu.co
    </html>
    * Connection #0 to host myproxy left intact
-  
+
   ```
-  
+
   仔细看一下上面的信息，> 表示从本地发出的http 头信息，< 表示远端返回的头信息，* 表示 curl额外提供的信息（非标准的http信息）。
-  
+
   我们可以看到代理的一部分工作，接受我们的请求，返回请求数据。相当于一个网关。
-  
-  
+
+
 ### 3. 总结
 
 curl 是一个很有用的工具，一般人我不告诉的哦。
@@ -149,7 +157,7 @@ curl 是一个很有用的工具，一般人我不告诉的哦。
 下一步打算翻译一下 [curl man page](http://curl.haxx.se/docs/manpage.html),做一些页面美化和排版，以方便使用。
 
 敬请关注。
-  
+
 
 
 
