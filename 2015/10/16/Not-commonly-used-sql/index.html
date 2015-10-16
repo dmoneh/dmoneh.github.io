@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>编程之约定 | SilentSong</title>
+  <title>不常用的sql | SilentSong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记得初学java，彻夜学习马士兵老师的教程，讲到struts 2时，马老师说道，真实的项目开发，命令约定非常重要。当时太年轻，并不明白这句话的真谛，但是还是默默记在心里。等到真正参与项目了，见识了很多因为不约定或者约定不一致而引发的争吵和矛盾，也见识了很多拥有优雅简练的约定的很棒的项目。有很多吐槽，这里就不说了。只是总结一下自己的经验吧。">
+  <meta name="description" content="不常用的是最难记住的。
+Alter添加列1alter table table_name add column_name data_type unique/default/not-null comment &apos;comments&apos;;
+删除列1alter table table_name drop column_name;
+更新列1alter table table_name change old_col">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编程之约定">
-<meta property="og:url" content="http://dmoneh.github.io/2015/09/21/convention-is-necessary/index.html">
+<meta property="og:title" content="不常用的sql">
+<meta property="og:url" content="http://dmoneh.github.io/2015/10/16/Not-commonly-used-sql/index.html">
 <meta property="og:site_name" content="SilentSong">
-<meta property="og:description" content="记得初学java，彻夜学习马士兵老师的教程，讲到struts 2时，马老师说道，真实的项目开发，命令约定非常重要。当时太年轻，并不明白这句话的真谛，但是还是默默记在心里。等到真正参与项目了，见识了很多因为不约定或者约定不一致而引发的争吵和矛盾，也见识了很多拥有优雅简练的约定的很棒的项目。有很多吐槽，这里就不说了。只是总结一下自己的经验吧。">
-<meta property="og:updated_time" content="2015-09-21T07:17:07.759Z">
+<meta property="og:description" content="不常用的是最难记住的。
+Alter添加列1alter table table_name add column_name data_type unique/default/not-null comment &apos;comments&apos;;
+删除列1alter table table_name drop column_name;
+更新列1alter table table_name change old_col">
+<meta property="og:updated_time" content="2015-10-16T06:28:06.179Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编程之约定">
-<meta name="twitter:description" content="记得初学java，彻夜学习马士兵老师的教程，讲到struts 2时，马老师说道，真实的项目开发，命令约定非常重要。当时太年轻，并不明白这句话的真谛，但是还是默默记在心里。等到真正参与项目了，见识了很多因为不约定或者约定不一致而引发的争吵和矛盾，也见识了很多拥有优雅简练的约定的很棒的项目。有很多吐槽，这里就不说了。只是总结一下自己的经验吧。">
+<meta name="twitter:title" content="不常用的sql">
+<meta name="twitter:description" content="不常用的是最难记住的。
+Alter添加列1alter table table_name add column_name data_type unique/default/not-null comment &apos;comments&apos;;
+删除列1alter table table_name drop column_name;
+更新列1alter table table_name change old_col">
   
     <link rel="alternative" href="/silentsong/atom.xml" title="SilentSong" type="application/atom+xml">
   
@@ -73,10 +82,10 @@ var _hmt = _hmt || [];
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-convention-is-necessary" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Not-commonly-used-sql" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/silentsong/2015/09/21/convention-is-necessary/" class="article-date">
-  <time datetime="2015-09-21T06:01:49.000Z" itemprop="datePublished">2015-09-21</time>
+    <a href="/silentsong/2015/10/16/Not-commonly-used-sql/" class="article-date">
+  <time datetime="2015-10-16T06:22:47.000Z" itemprop="datePublished">2015-10-16</time>
 </a>
     
   </div>
@@ -87,7 +96,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      编程之约定
+      不常用的sql
     </h1>
   
 
@@ -95,47 +104,52 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>记得初学java，彻夜学习马士兵老师的教程，讲到struts 2时，马老师说道，真实的项目开发，命令约定非常重要。当时太年轻，并不明白这句话的真谛，但是还是默默记在心里。等到真正参与项目了，见识了很多因为不约定或者约定不一致而引发的争吵和矛盾，也见识了很多拥有优雅简练的约定的很棒的项目。有很多吐槽，这里就不说了。只是总结一下自己的经验吧。<br><a id="more"></a></p>
-<h4 id="1-_约定必须面面俱到">1. 约定必须面面俱到</h4><p>从项目的架构，到各种实体的命名，包括模块，文件，类，对象，变量，方法，注释的格式，等等，凡是开发人员参与的东西，必须都有约定说明。比如，所有的数据库访问对象都必须放在models目录下；所有的标识符必须用驼峰式。</p>
-<p>比较专业的程序员，一般都会遵循已有的项目风格，比如，虽然没有命名约定，但是，他会至少参考一下已有代码的命名风格，然后开始写自己的代码。虽然他的风格会和其他的人不一样，至少他是有自己的风格的。但是，总是会有很不负责任的人存在，而且不在少数，他们的风格是，没有风格。高兴注释就注释，不高兴就不注释。有时候变量是驼峰，有时候是下环线。所以，面面俱到是非常必要的。</p>
-<h4 id="2-_约定必须简洁">2. 约定必须简洁</h4><p>为什么要简洁？只有简洁的约定，才能被人所接受。</p>
-<p>我亲眼见过繁琐约定的诞生，甲说，命名用驼峰式吧，乙说，数据库对象的名词应该用下环线比如 user_model，然后领导说，两种综合一下，于是一个约定诞生了。 可是真的有必要吗？</p>
-<p>这个时候，一个独断专行的约定指定人，可能比一个爱接受建议的，更好。</p>
-<h4 id="3-_约定必须死板">3. 约定必须死板</h4><p>不遵守约定的代码，对不起，请改了之后再提交。<br>你觉得有个好建议，希望加到约定中，对不起，请接受现有的约定。</p>
-<p>当然，应该一定的周期，更新约定，但是不宜频繁。</p>
-<h4 id="4-_必须要有人监督约定的实施">4. 必须要有人监督约定的实施</h4><p>再好的约定，没人监督，都会沦为废纸。人都是有惰性的，不要相信自觉。至少，在程序员素质良莠不齐的项目组里，一定要有明确的人来监督实施。</p>
-<p>以上。</p>
+        <p>不常用的是最难记住的。</p>
+<h2 id="Alter">Alter</h2><h3 id="添加列">添加列</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">add</span> column_name data_type <span class="keyword">unique</span>/<span class="keyword">default</span>/<span class="keyword">not</span>-<span class="literal">null</span> <span class="keyword">comment</span> <span class="string">'comments'</span>;</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除列">删除列</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">drop</span> column_name;</span></span><br></pre></td></tr></table></figure>
+<h3 id="更新列">更新列</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">change</span> old_column_name new_column_name data_type <span class="keyword">unique</span>/<span class="keyword">default</span>/<span class="keyword">not</span>-<span class="literal">null</span> <span class="keyword">comment</span> <span class="string">'comments'</span>;</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加约束">添加约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">add</span> <span class="keyword">constraint</span> fk_name foreign <span class="keyword">key</span>(foreign_column_name) <span class="keyword">references</span> foreign_table_name(references_column_name) <span class="keyword">on</span> <span class="keyword">delete</span>/<span class="keyword">update</span> xxx;</span></span><br></pre></td></tr></table></figure>
+<p>mysql 外键约束 on delete和on update</p>
+<p>on delete rule：</p>
+<ul>
+<li>restrict：约束<br>  如果存在从数据，不允许删除主数据。</li>
+<li>no action<br>  如果存在从数据，不允许删除主数据。</li>
+<li>cascade：级联<br>  删除主数据，顺便也删掉从数据。</li>
+<li>set null<br>  删除主数据，从数据外键的值设为null。</li>
+</ul>
+<p>on update rule：</p>
+<ul>
+<li>restrict：约束<br>  修改主数据中被关联的field，如果有该主数据有从数据，不允许修改。</li>
+<li>no action<br>  修改主数据中被关联的field，如果有该主数据有从数据，不允许修改。</li>
+<li>cascade<br>  修改主数据中被关联的field，如果有该主数据有从数据，顺便一起修改从数据的外键值。</li>
+<li>set null<br>  修改主数据中被关联的field，如果有该主数据有从数据，从数据的外键值设为null。</li>
+</ul>
+<h3 id="删除约束">删除约束</h3><p>删除外键示例<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">drop</span> foreign <span class="keyword">key</span> fk_name;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Trigger">Trigger</h2><h3 id="添加trigger">添加trigger</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">delimiter $$</span><br><span class="line"></span><br><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">trigger</span> trigger_name</span><br><span class="line"><span class="keyword">before</span> <span class="keyword">update</span> <span class="keyword">on</span> table_name</span><br><span class="line"><span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">SET</span> <span class="keyword">new</span>.<span class="keyword">updated</span> = <span class="keyword">NOW</span>();</span></span><br><span class="line"><span class="operator"><span class="keyword">end</span>;</span></span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure>
+<h3 id="删除trigger">删除trigger</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">drop</span> <span class="keyword">trigger</span> trigger_name;</span></span><br></pre></td></tr></table></figure>
+<p>（未完待续）</p>
 
       
     </div>
     <footer class="article-footer">
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/silentsong/tags/principle/">principle</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/silentsong/tags/mysql/">mysql</a></li></ul>
 
       <span id="busuanzi_container_page_pv">
   阅读<span id="busuanzi_value_page_pv"></span>次
 </span>
 
-      <a data-url="http://dmoneh.github.io/2015/09/21/convention-is-necessary/" data-id="cift9xplb000dokff3q94tnle" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/10/16/Not-commonly-used-sql/" data-id="cift9xpiw0000okffixm48wo2" class="article-share-link">Share</a>
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/silentsong/2015/09/21/common-identifier/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          关于标识符
-        
-      </div>
-    </a>
   
-  
-    <a href="/silentsong/2015/09/10/use-curl/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/silentsong/2015/09/21/common-identifier/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">curl 简单入门</div>
+      <div class="article-nav-title">关于标识符</div>
     </a>
   
 </nav>
@@ -252,7 +266,7 @@ var _hmt = _hmt || [];
 <script>
   var disqus_shortname = 'silentsong';
   
-  var disqus_url = 'http://dmoneh.github.io/2015/09/21/convention-is-necessary/';
+  var disqus_url = 'http://dmoneh.github.io/2015/10/16/Not-commonly-used-sql/';
   
   (function(){
     var dsq = document.createElement('script');
