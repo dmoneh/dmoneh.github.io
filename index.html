@@ -96,31 +96,12 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>不常用的是最难记住的。</p>
-<h2 id="Alter">Alter</h2><h3 id="添加列">添加列</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">add</span> column_name data_type <span class="keyword">unique</span>/<span class="keyword">default</span>/<span class="keyword">not</span>-<span class="literal">null</span> <span class="keyword">comment</span> <span class="string">'comments'</span>;</span></span><br></pre></td></tr></table></figure>
-<h3 id="删除列">删除列</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">drop</span> column_name;</span></span><br></pre></td></tr></table></figure>
-<h3 id="更新列">更新列</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">change</span> old_column_name new_column_name data_type <span class="keyword">unique</span>/<span class="keyword">default</span>/<span class="keyword">not</span>-<span class="literal">null</span> <span class="keyword">comment</span> <span class="string">'comments'</span>;</span></span><br></pre></td></tr></table></figure>
-<h3 id="添加约束">添加约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">add</span> <span class="keyword">constraint</span> fk_name foreign <span class="keyword">key</span>(foreign_column_name) <span class="keyword">references</span> foreign_table_name(references_column_name) <span class="keyword">on</span> <span class="keyword">delete</span>/<span class="keyword">update</span> xxx;</span></span><br></pre></td></tr></table></figure>
-<p>mysql 外键约束 on delete和on update</p>
-<p>on delete rule：</p>
-<ul>
-<li>restrict：约束<br>  如果存在从数据，不允许删除主数据。</li>
-<li>no action<br>  如果存在从数据，不允许删除主数据。</li>
-<li>cascade：级联<br>  删除主数据，顺便也删掉从数据。</li>
-<li>set null<br>  删除主数据，从数据外键的值设为null。</li>
-</ul>
-<p>on update rule：</p>
-<ul>
-<li>restrict：约束<br>  修改主数据中被关联的field，如果有该主数据有从数据，不允许修改。</li>
-<li>no action<br>  修改主数据中被关联的field，如果有该主数据有从数据，不允许修改。</li>
-<li>cascade<br>  修改主数据中被关联的field，如果有该主数据有从数据，顺便一起修改从数据的外键值。</li>
-<li>set null<br>  修改主数据中被关联的field，如果有该主数据有从数据，从数据的外键值设为null。</li>
-</ul>
-<h3 id="删除约束">删除约束</h3><p>删除外键示例<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">drop</span> foreign <span class="keyword">key</span> fk_name;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="Trigger">Trigger</h2><h3 id="添加trigger">添加trigger</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">delimiter $$</span><br><span class="line"></span><br><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">trigger</span> trigger_name</span><br><span class="line"><span class="keyword">before</span> <span class="keyword">update</span> <span class="keyword">on</span> table_name</span><br><span class="line"><span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">SET</span> <span class="keyword">new</span>.<span class="keyword">updated</span> = <span class="keyword">NOW</span>();</span></span><br><span class="line"><span class="operator"><span class="keyword">end</span>;</span></span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure>
-<h3 id="删除trigger">删除trigger</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">drop</span> <span class="keyword">trigger</span> trigger_name;</span></span><br></pre></td></tr></table></figure>
-<p>（未完待续）</p>
-
+        <p>不常用的是最难记住的。<br>
+        
+          <p class="article-more-link">
+            <a href="/silentsong/2015/10/16/Not-commonly-used-sql/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -131,7 +112,7 @@ var _hmt = _hmt || [];
   阅读<span id="busuanzi_value_page_pv"></span>次
 </span>
 
-      <a data-url="http://dmoneh.github.io/2015/10/16/Not-commonly-used-sql/" data-id="cift9xpiw0000okffixm48wo2" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/10/16/Not-commonly-used-sql/" data-id="cifta3wk50000esffororfha5" class="article-share-link">Share</a>
     </footer>
   </div>
   
@@ -181,7 +162,7 @@ var _hmt = _hmt || [];
   阅读<span id="busuanzi_value_page_pv"></span>次
 </span>
 
-      <a data-url="http://dmoneh.github.io/2015/09/21/common-identifier/" data-id="cift9xplg000gokffrr7kb2ao" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/09/21/common-identifier/" data-id="cifta3wmu000gesffk3ir63dd" class="article-share-link">Share</a>
     </footer>
   </div>
   
@@ -231,7 +212,7 @@ var _hmt = _hmt || [];
   阅读<span id="busuanzi_value_page_pv"></span>次
 </span>
 
-      <a data-url="http://dmoneh.github.io/2015/09/21/convention-is-necessary/" data-id="cift9xplb000dokff3q94tnle" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/09/21/convention-is-necessary/" data-id="cifta3wmo000desffoyp4d5v5" class="article-share-link">Share</a>
     </footer>
   </div>
   
@@ -282,7 +263,7 @@ var _hmt = _hmt || [];
   阅读<span id="busuanzi_value_page_pv"></span>次
 </span>
 
-      <a data-url="http://dmoneh.github.io/2015/09/10/use-curl/" data-id="cift9xpkp0003okffyvm4lr8e" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/09/10/use-curl/" data-id="cifta3wls0003esffe3og0k6p" class="article-share-link">Share</a>
     </footer>
   </div>
   
@@ -332,7 +313,7 @@ var _hmt = _hmt || [];
   阅读<span id="busuanzi_value_page_pv"></span>次
 </span>
 
-      <a data-url="http://dmoneh.github.io/2015/09/01/node-unit-test-by-mocha/" data-id="cift9xpkw0006okff5g85ncow" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/09/01/node-unit-test-by-mocha/" data-id="cifta3wm70006esffclfbwz5u" class="article-share-link">Share</a>
     </footer>
   </div>
   
@@ -382,7 +363,7 @@ var _hmt = _hmt || [];
   阅读<span id="busuanzi_value_page_pv"></span>次
 </span>
 
-      <a data-url="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/" data-id="cift9xpl10009okffmcb0bu06" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/" data-id="cifta3wmc0009esffllwkcfle" class="article-share-link">Share</a>
     </footer>
   </div>
   
@@ -432,7 +413,7 @@ var _hmt = _hmt || [];
   阅读<span id="busuanzi_value_page_pv"></span>次
 </span>
 
-      <a data-url="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/" data-id="cift9xpl5000bokff5z2napl9" class="article-share-link">Share</a>
+      <a data-url="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/" data-id="cifta3wmh000besffswbt4l4j" class="article-share-link">Share</a>
     </footer>
   </div>
   
