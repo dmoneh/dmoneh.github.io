@@ -16,85 +16,84 @@
 <meta name="twitter:title" content="Nodejs 内置的 unit test 模块 - assert">
 <meta name="twitter:description" content="Nodejs 有一个叫做 assert 的模块，可以用来做简单的 断言。">
   
-    <link rel="alternative" href="/silentsong/atom.xml" title="SilentSong" type="application/atom+xml">
   
-  
-    <link rel="icon" href="/silentsong/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+
   <link rel="stylesheet" href="/silentsong/css/style.css" type="text/css">
   
-
-  <!-- Baidu Statistics -->
-<script type="text/javascript">
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?ac5d023dc7ae04ee6799991e0727f211";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-<!-- End Baidu Statistics -->
+  
+  
 
 
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/silentsong/font-awesome/css/font-awesome.min.css" type="text/css">
 </head>
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
+  <div id="wrap">
+    <header id="header">
   <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">SilentSong</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/silentsong">Home</a>
-        
-          <a class="main-nav-link" href="/silentsong/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/silentsong/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dmoneh.github.io"></form>
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://dmoneh.github.io"></form>
+                
+              </div>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-node-assert-for-unit-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/silentsong/2015/09/01/node-assert-for-unit-test/" class="article-date">
-  <time datetime="2015-09-01T05:15:36.000Z" itemprop="datePublished">2015-09-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header">未分类</h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-node-assert-for-unit-test" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
   
     <h1 class="article-title" itemprop="name">
       Nodejs 内置的 unit test 模块 - assert
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+        </header>
       
+      <p class="article-byline">
+        <a href="/silentsong/2015/09/01/node-assert-for-unit-test/" class="article-date">
+  <time datetime="2015-09-01T05:15:36.000Z" itemprop="datePublished">2015-09-01</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
         <p>Nodejs 有一个叫做 <a href="https://nodejs.org/api/assert.html" target="_blank" rel="external">assert</a> 的模块，可以用来做简单的 断言。<br><a id="more"></a><br>下面是一个小例子。</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">assert</span> = require('<span class="keyword">assert</span>');</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">ret</span> = <span class="keyword">assert</span>.ok(true); </span><br><span class="line">console.<span class="literal">log</span>('<span class="keyword">ret</span>: ' + <span class="keyword">ret</span>);</span><br></pre></td></tr></table></figure>
 <p>上面的例子中，assert.ok 用于检测测试值是否为 true。 很显然，测试应该通过。<br>运行，发现没有打印任何信息，而返回值 ret 也是 undefined 。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node <span class="number">001</span><span class="class">.asssert</span><span class="class">.js</span></span><br><span class="line">ret: undefined</span><br></pre></td></tr></table></figure></p>
@@ -108,148 +107,83 @@ var _hmt = _hmt || [];
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">assert.js:<span class="number">86</span></span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> assert.AssertionError(&#123;</span><br><span class="line">        ^</span><br><span class="line">AssertionError: <span class="literal">false</span> == <span class="literal">true</span></span><br><span class="line">    at Object.&lt;anonymous&gt; (d:\workspace\node\learn-node\<span class="number">001.</span>asssert.js:<span class="number">2</span>:<span class="number">18</span>)</span><br><span class="line">    at Module._compile (module.js:<span class="number">460</span>:<span class="number">26</span>)</span><br><span class="line">    at Object.Module._extensions..js (module.js:<span class="number">478</span>:<span class="number">10</span>)</span><br><span class="line">    at Module.load (module.js:<span class="number">355</span>:<span class="number">32</span>)</span><br><span class="line">    at Function.Module._load (module.js:<span class="number">310</span>:<span class="number">12</span>)</span><br><span class="line">    at Function.Module.runMain (module.js:<span class="number">501</span>:<span class="number">10</span>)</span><br><span class="line">    <span class="function">at <span class="title">startup</span> <span class="params">(node.js:<span class="number">129</span>:<span class="number">16</span>)</span></span><br><span class="line">    at node.js:814:3</span></span><br></pre></td></tr></table></figure>
 <p>理想的单元测试，应该可以定义测试用例的名字， 应该在测试完成之后， 输出测试用例的名字和通过状态。 assert 并不能完成这样的工作， 但是它具备了基本的行为模式： 测试，输出测试状态。 所以， 它可以作为单元测试框架的断言库，事实上，<a href="https://mochajs.org/" target="_blank" rel="external">mocha</a>，一种比较流行的测试框架， 确实支持用 node assert 做断言库。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/" data-id="cigk6u5pt00098offf2mc5ezq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+          <a href="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/#comments" class="article-comment-link"><i class="fa fa-comments"></i>评论</a>
+        
+        
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/silentsong/tags/node-unit-test/">node,unit test</a></li></ul>
 
-      <span id="busuanzi_container_page_pv">
-  阅读<span id="busuanzi_value_page_pv"></span>次
-</span>
+      </footer>
+    </div>
+  </article>
+  
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </section>
+  
+  
 
-      <a data-url="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/" data-id="cifta3wmc0009esffllwkcfle" class="article-share-link">Share</a>
-    </footer>
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+    </ul>
   </div>
   
     
 <nav id="article-nav">
   
     <a href="/silentsong/2015/09/01/node-unit-test-by-mocha/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
         
           Node 单元测试 - Mocha
         
-      </div>
+      </p>
+      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
   
   
     <a href="/silentsong/2015/08/27/frontend-should-know-curl/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">前端也应该懂 curl</div>
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">前端也应该懂 curl</p>
+      <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
     </a>
   
 </nav>
 
-    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-    <div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'silentsong';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
   
-
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
+  <div class="widgets-container">
     
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/curl/">curl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/node-unit-test/">node,unit test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/principle/">principle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/标识符/">标识符</a><span class="tag-list-count">1</span></li></ul>
-    </div>
   </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/silentsong/tags/curl/" style="font-size: 20px;">curl</a> <a href="/silentsong/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/silentsong/tags/node-unit-test/" style="font-size: 20px;">node,unit test</a> <a href="/silentsong/tags/principle/" style="font-size: 10px;">principle</a> <a href="/silentsong/tags/标识符/" style="font-size: 10px;">标识符</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/silentsong/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/silentsong/archives/2015/09/">September 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/silentsong/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/silentsong/2015/10/16/Not-commonly-used-sql/">不常用的sql</a>
-          </li>
-        
-          <li>
-            <a href="/silentsong/2015/09/21/common-identifier/">关于标识符</a>
-          </li>
-        
-          <li>
-            <a href="/silentsong/2015/09/21/convention-is-necessary/">编程之约定</a>
-          </li>
-        
-          <li>
-            <a href="/silentsong/2015/09/10/use-curl/">curl 简单入门</a>
-          </li>
-        
-          <li>
-            <a href="/silentsong/2015/09/01/node-unit-test-by-mocha/">Node 单元测试 - Mocha</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
 </aside>
-        
+        </div>
       </div>
-      <footer id="footer">
+    </div>
+    <footer id="footer">
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2015 wangpin<br>
-       <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
- <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 wangpin</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
     </div>
   </div>
 </footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/silentsong" class="mobile-nav-link">Home</a>
-  
-    <a href="/silentsong/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
 <script>
   var disqus_shortname = 'silentsong';
@@ -266,13 +200,17 @@ var _hmt = _hmt || [];
 </script>
 
 
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 
 
-  <link rel="stylesheet" href="/silentsong/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/silentsong/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
 
 
+
+
+
+
+<script src="/silentsong/js/html-patch.js" type="text/javascript"></script>
 <script src="/silentsong/js/script.js" type="text/javascript"></script>
 
   </div>
