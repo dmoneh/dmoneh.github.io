@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://dmoneh.github.io/silentsong
+url: http://dmoneh.github.io
 root: /silentsong
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,42 +73,3 @@ deploy:
   branch: gh-pages
 
 disqus_shortname: silentsong
-
-
-# Header
-menu:
-  Home: /
-  Categories:
-  About: /about/index.html
-
-# Content
-fancybox: true
-
-# Thumbnail
-thumbnail: true
-
-# Scroll Loading
-scrollLoading: true
-
-# Sidebar
-social_links:
-  twitter:
-  facebook:
-  google_plus:
-  weibo:
-  rss:
-widgets:
-- recent_posts
-- category
-- archive
-- tag
-- tagcloud
-- links
-
-# Links
-links:
-  Hexo: http://hexo.io
-
-# Miscellaneous
-google_analytics:
-favicon: /favicon.png
