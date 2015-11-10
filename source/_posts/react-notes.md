@@ -2,6 +2,7 @@ title: react 学习笔记
 date: 2015-11-09 21:15:21
 tags: 学习笔记
 ---
+![logo](https://raw.githubusercontent.com/dmoneh/dmoneh.github.io/master/asserts/imgs/react-logo.png)
 （持续更新中）
 # 环境准备
 
