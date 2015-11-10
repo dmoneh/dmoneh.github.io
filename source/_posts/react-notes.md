@@ -3,7 +3,7 @@ date: 2015-11-09 21:15:21
 tags: 学习笔记
 ---
 （持续更新中）
-# 环境准本
+# 环境准备
 
 react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。
 
@@ -41,7 +41,7 @@ ReactDOM.render(
 * 组件名必须以大写字母开始
 * 组件中至少要包含 getInitialState 和 render 两个函数才能正常功能
 
-上面提到真实存在的dom ，也就是 mydiv ，与之对应的就是 FirstComponent 这个虚拟dom，这也是react力推的技 - virtal dom。
+上面提到真实存在的dom ，也就是 mydiv ，与之对应的就是 FirstComponent 这个虚拟dom，这也是react力推的技术 - virtal dom。
 
 ## 2 传递数据
 很多时候，我们需要向组件中传递一些数据。假设有一个数据对象 data
@@ -143,11 +143,11 @@ render:function(){
 }
 ```
 
-然后通过 ReactDOM.findDOMNode(ref值)
+然后通过 ReactDOM.findDOMNode 来获取 dom 对象
 ```
 var nameDom = ReactDOM.findDOMNode(this.refs.name)
 ```
-nameDom 就是对应的 dom 对象
+nameDom 就是对应的 dom 对象。
 
 
 
