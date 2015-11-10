@@ -10,12 +10,12 @@
 学习react，从小练习开始。下面是一些做练习必备的东西。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react 学习笔记">
-<meta property="og:url" content="http://dmoneh.github.io/silentsong/2015/11/09/react-notes/index.html">
+<meta property="og:url" content="http://dmoneh.github.io/2015/11/09/react-notes/index.html">
 <meta property="og:site_name" content="SilentSong">
 <meta property="og:description" content="（持续更新中）
 环境准本react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。
 学习react，从小练习开始。下面是一些做练习必备的东西。">
-<meta property="og:updated_time" content="2015-11-09T13:56:21.251Z">
+<meta property="og:updated_time" content="2015-11-10T01:40:02.280Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react 学习笔记">
 <meta name="twitter:description" content="（持续更新中）
@@ -26,12 +26,12 @@
     <link rel="icon" href="/favicon.png">
   
 
-  <link rel="stylesheet" href="/silentsong/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
   
-    <link rel="stylesheet" href="/silentsong/fancybox/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
   
   
-    <link rel="stylesheet" href="/silentsong/scrollLoading/style.css" type="text/css">
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
   
   
 
@@ -42,7 +42,7 @@
     <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
     <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/silentsong/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
 </head>
 
 <body>
@@ -72,7 +72,7 @@
             <nav id="sub-nav">
               <div id="search-form-wrap">
                 
-                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://dmoneh.github.io/silentsong"></form>
+                  <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://dmoneh.github.io"></form>
                 
               </div>
             </nav>
@@ -107,7 +107,7 @@
         </header>
       
       <p class="article-byline">
-        <a href="/silentsong/2015/11/09/react-notes/" class="article-date">
+        <a href="/2015/11/09/react-notes/" class="article-date">
   <time datetime="2015-11-09T13:15:21.000Z" itemprop="datePublished">2015-11-09</time>
 </a>
       </p>
@@ -133,24 +133,25 @@
 <p>this 代表组件对象，outerData 是传递数据时指定的变量名。</p>
 <h2 id="3_父子组件">3 父子组件</h2><p>可以在组件 Parent 中，渲染组件 Child ，Child 就是 Parent 的子组件。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">Parent</span> = React.createClass(&#123;</span><br><span class="line">    getInitialState:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">   &#125;,</span><br><span class="line">   render:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    <span class="keyword">Parent</span> component</span><br><span class="line">    &lt;Child/&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;),</span><br><span class="line">  Child = React.createClass(&#123;</span><br><span class="line">   getInitialState:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">   &#125;,</span><br><span class="line">   render:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">     Child component</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
 <p>然后，只需要在dom中添加一个 Parent，它的子组件 Child 也会添加进去。</p>
-<h2 id="4_State">4 State</h2><p>state表示组件的状态，其实它是一个对象，可以像访问普通对象的方式一样访问它的属性。<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="keyword">state</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="4_State">4 State</h2><p>state 表示组件的状态，其实它是一个对象，可以像访问普通对象的方式一样访问它的属性。<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="keyword">state</span></span><br></pre></td></tr></table></figure></p>
 <p>但是如果想要修改state，必须使用下面这个函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="keyword">function</span>(<span class="params">state</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">    date:<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>需要注意的是，返回的对象并不会替代 state ，而是对它进行遍历，更新相同的属性。比如这里，返回的对象包含 date 这个属性，所以 state 的 date 属性会被更新。</p>
-<h2 id="5_控制组件局部的显示和隐藏">5 控制组件局部的显示和隐藏</h2><p>react支持三元表达式，可以用于显示/隐藏元素<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> return</span><br><span class="line">  <span class="variable">&lt;div&gt;</span></span><br><span class="line">   &#123;if(this.<span class="keyword">state</span>.title)?</span><br><span class="line">   <span class="variable">&lt;span&gt;</span>&#123;this.<span class="keyword">state</span>.title&#125;<span class="variable">&lt;/span&gt;</span></span><br><span class="line">   :null&#125;</span><br><span class="line">  <span class="variable">&lt;/div&gt;</span></span><br><span class="line">  ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，返回的对象并不会替代 state ，而是更新对应的属性。比如，返回的对象包含 date 这个属性，所以 state 的 date 属性会被更新。</p>
+<h2 id="5_控制组件局部的显示和隐藏">5 控制组件局部的显示和隐藏</h2><p>react 支持三元表达式，可以用于显示/隐藏元素<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> return</span><br><span class="line">  <span class="variable">&lt;div&gt;</span></span><br><span class="line">   &#123;if(this.<span class="keyword">state</span>.title)?</span><br><span class="line">   <span class="variable">&lt;span&gt;</span>&#123;this.<span class="keyword">state</span>.title&#125;<span class="variable">&lt;/span&gt;</span></span><br><span class="line">   :null&#125;</span><br><span class="line">  <span class="variable">&lt;/div&gt;</span></span><br><span class="line">  ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>如上，我们可以通过 title 的值，来决定是否显示 title。</p>
-<h2 id="6_组装渲染结果">6 组装渲染结果</h2><p>render函数的返回结果可以直接写好，获取，根据实际情况，动态组装<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> var vdom = [];</span><br><span class="line"> if(this.<span class="keyword">state</span>.needTitle)&#123;</span><br><span class="line">  vdom.push(<span class="variable">&lt;span&gt;</span>title<span class="variable">&lt;/span&gt;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> return <span class="variable">&lt;div&gt;</span>vdom<span class="variable">&lt;/div&gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="7_获取_dom_节点对象">7 获取 dom 节点对象</h2><p>有些时候，我们需要回去真实dom。可以预先指定 ref 属性<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> <span class="keyword">return</span></span><br><span class="line">  &lt;<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;input <span class="keyword">type</span>=<span class="string">"text"</span> <span class="keyword">ref</span>=<span class="string">"name"</span> name=<span class="string">"name"</span>/&gt;</span><br><span class="line">  &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="6_组装渲染结果">6 组装渲染结果</h2><p>render函数的返回结果可以直接写好，或者根据条件动态组装。<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> var vdom = [];</span><br><span class="line"> if(this.<span class="keyword">state</span>.needTitle)&#123;</span><br><span class="line">  vdom.push(<span class="variable">&lt;span&gt;</span>title<span class="variable">&lt;/span&gt;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> return <span class="variable">&lt;div&gt;</span>vdom<span class="variable">&lt;/div&gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="7_获取_dom_节点对象">7 获取 dom 节点对象</h2><p>有些时候，我们必须获取真实dom，比如获取输入框的值。</p>
+<p>指定 ref 属性<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> <span class="keyword">return</span></span><br><span class="line">  &lt;<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;input <span class="keyword">type</span>=<span class="string">"text"</span> <span class="keyword">ref</span>=<span class="string">"name"</span> name=<span class="string">"name"</span>/&gt;</span><br><span class="line">  &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>然后通过 ReactDOM.findDOMNode(ref值)<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> nameDom = ReactDOM.<span class="function"><span class="title">findDOMNode</span><span class="params">(this.refs.name)</span></span></span><br></pre></td></tr></table></figure></p>
 <p>nameDom 就是对应的 dom 对象</p>
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://dmoneh.github.io/silentsong/2015/11/09/react-notes/" data-id="cigs0incn000670ffse72y237" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://dmoneh.github.io/2015/11/09/react-notes/" data-id="cigsporwh0007hgffygp5miss" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
-          <a href="http://dmoneh.github.io/silentsong/2015/11/09/react-notes/#comments" class="article-comment-link"><i class="fa fa-comments"></i>评论</a>
+          <a href="http://dmoneh.github.io/2015/11/09/react-notes/#comments" class="article-comment-link"><i class="fa fa-comments"></i>评论</a>
         
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/silentsong/tags/学习笔记/">学习笔记</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
 
       </footer>
     </div>
@@ -188,8 +189,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2015/11/09/sequelize-notes/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          sequelize-notes
+        
+      </p>
+      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
   
-    <a href="/silentsong/2015/10/16/Not-commonly-used-sql/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2015/10/16/Not-commonly-used-sql/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <p class="article-nav-title">不常用的sql</p>
       <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
@@ -210,7 +221,7 @@
             
             <div class="item-thumbnail">
               
-<a href="/silentsong/2015/11/09/react-notes/" class="thumbnail">
+<a href="/2015/11/09/sequelize-notes/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -220,7 +231,26 @@
             
             <div class="item-inner">
               <p class="item-category"></p>
-              <p class="item-title"><a href="/silentsong/2015/11/09/react-notes/" class="title">react 学习笔记</a></p>
+              <p class="item-title"><a href="/2015/11/09/sequelize-notes/" class="title">sequelize-notes</a></p>
+              <p class="item-date"><time datetime="2015-11-09T14:00:10.000Z" itemprop="datePublished">2015-11-09</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/11/09/react-notes/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/11/09/react-notes/" class="title">react 学习笔记</a></p>
               <p class="item-date"><time datetime="2015-11-09T13:15:21.000Z" itemprop="datePublished">2015-11-09</time></p>
             </div>
           </li>
@@ -229,7 +259,7 @@
             
             <div class="item-thumbnail">
               
-<a href="/silentsong/2015/10/16/Not-commonly-used-sql/" class="thumbnail">
+<a href="/2015/10/16/Not-commonly-used-sql/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -239,7 +269,7 @@
             
             <div class="item-inner">
               <p class="item-category"></p>
-              <p class="item-title"><a href="/silentsong/2015/10/16/Not-commonly-used-sql/" class="title">不常用的sql</a></p>
+              <p class="item-title"><a href="/2015/10/16/Not-commonly-used-sql/" class="title">不常用的sql</a></p>
               <p class="item-date"><time datetime="2015-10-16T06:22:47.000Z" itemprop="datePublished">2015-10-16</time></p>
             </div>
           </li>
@@ -248,7 +278,7 @@
             
             <div class="item-thumbnail">
               
-<a href="/silentsong/2015/09/21/common-identifier/" class="thumbnail">
+<a href="/2015/09/21/common-identifier/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -258,7 +288,7 @@
             
             <div class="item-inner">
               <p class="item-category"></p>
-              <p class="item-title"><a href="/silentsong/2015/09/21/common-identifier/" class="title">关于标识符</a></p>
+              <p class="item-title"><a href="/2015/09/21/common-identifier/" class="title">关于标识符</a></p>
               <p class="item-date"><time datetime="2015-09-21T06:12:33.000Z" itemprop="datePublished">2015-09-21</time></p>
             </div>
           </li>
@@ -267,7 +297,7 @@
             
             <div class="item-thumbnail">
               
-<a href="/silentsong/2015/09/21/convention-is-necessary/" class="thumbnail">
+<a href="/2015/09/21/convention-is-necessary/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -277,27 +307,8 @@
             
             <div class="item-inner">
               <p class="item-category"></p>
-              <p class="item-title"><a href="/silentsong/2015/09/21/convention-is-necessary/" class="title">编程之约定</a></p>
+              <p class="item-title"><a href="/2015/09/21/convention-is-necessary/" class="title">编程之约定</a></p>
               <p class="item-date"><time datetime="2015-09-21T06:01:49.000Z" itemprop="datePublished">2015-09-21</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              
-<a href="/silentsong/2015/09/10/use-curl/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"></p>
-              <p class="item-title"><a href="/silentsong/2015/09/10/use-curl/" class="title">curl 简单入门</a></p>
-              <p class="item-date"><time datetime="2015-09-10T03:31:28.000Z" itemprop="datePublished">2015-09-10</time></p>
             </div>
           </li>
         
@@ -313,7 +324,7 @@
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/silentsong/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/silentsong/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/silentsong/archives/2015/09/">September 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/silentsong/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -323,7 +334,7 @@
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/curl/">curl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/node-unit-test/">node,unit test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/principle/">principle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/学习笔记/">学习笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/silentsong/tags/标识符/">标识符</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/">curl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-unit-test/">node,unit test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/principle/">principle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标识符/">标识符</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -333,7 +344,7 @@
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/silentsong/tags/curl/" style="font-size: 20px;">curl</a> <a href="/silentsong/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/silentsong/tags/node-unit-test/" style="font-size: 20px;">node,unit test</a> <a href="/silentsong/tags/principle/" style="font-size: 10px;">principle</a> <a href="/silentsong/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/silentsong/tags/标识符/" style="font-size: 10px;">标识符</a>
+      <a href="/tags/curl/" style="font-size: 20px;">curl</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/node-unit-test/" style="font-size: 20px;">node,unit test</a> <a href="/tags/principle/" style="font-size: 10px;">principle</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/标识符/" style="font-size: 10px;">标识符</a>
     </div>
   </div>
 
@@ -379,7 +390,7 @@
 <script>
   var disqus_shortname = 'silentsong';
   
-  var disqus_url = 'http://dmoneh.github.io/silentsong/2015/11/09/react-notes/';
+  var disqus_url = 'http://dmoneh.github.io/2015/11/09/react-notes/';
   
   (function(){
     var dsq = document.createElement('script');
@@ -396,18 +407,18 @@
 
 
 
-  <script src="/silentsong/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
 
 
 
-  <script src="/silentsong/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
-  <script src="/silentsong/scrollLoading/main.js" type="text/javascript"></script>
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
 
 
 
 
-<script src="/silentsong/js/html-patch.js" type="text/javascript"></script>
-<script src="/silentsong/js/script.js" type="text/javascript"></script>
+<script src="/js/html-patch.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
 
   </div>
 </body>

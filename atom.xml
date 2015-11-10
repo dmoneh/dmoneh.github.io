@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[SilentSong]]></title>
   
-  <link href="/silentsong/atom.xml" rel="self"/>
-  <link href="http://dmoneh.github.io/silentsong/"/>
-  <updated>2015-11-09T13:56:21.251Z</updated>
-  <id>http://dmoneh.github.io/silentsong/</id>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://dmoneh.github.io/"/>
+  <updated>2015-11-09T14:00:10.432Z</updated>
+  <id>http://dmoneh.github.io/</id>
   
   <author>
     <name><![CDATA[wangpin]]></name>
@@ -15,11 +15,24 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[sequelize-notes]]></title>
+    <link href="http://dmoneh.github.io/2015/11/09/sequelize-notes/"/>
+    <id>http://dmoneh.github.io/2015/11/09/sequelize-notes/</id>
+    <published>2015-11-09T14:00:10.000Z</published>
+    <updated>2015-11-09T14:00:10.432Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[react 学习笔记]]></title>
-    <link href="http://dmoneh.github.io/silentsong/2015/11/09/react-notes/"/>
-    <id>http://dmoneh.github.io/silentsong/2015/11/09/react-notes/</id>
+    <link href="http://dmoneh.github.io/2015/11/09/react-notes/"/>
+    <id>http://dmoneh.github.io/2015/11/09/react-notes/</id>
     <published>2015-11-09T13:15:21.000Z</published>
-    <updated>2015-11-09T13:56:21.251Z</updated>
+    <updated>2015-11-10T01:40:02.280Z</updated>
     <content type="html"><![CDATA[<p>（持续更新中）</p>
 <h1 id="环境准本">环境准本</h1><p>react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。</p>
 <p>学习react，从小练习开始。下面是一些做练习必备的东西。<br><a id="more"></a></p>
@@ -41,13 +54,14 @@
 <p>this 代表组件对象，outerData 是传递数据时指定的变量名。</p>
 <h2 id="3_父子组件">3 父子组件</h2><p>可以在组件 Parent 中，渲染组件 Child ，Child 就是 Parent 的子组件。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">Parent</span> = React.createClass(&#123;</span><br><span class="line">    getInitialState:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">   &#125;,</span><br><span class="line">   render:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    <span class="keyword">Parent</span> component</span><br><span class="line">    &lt;Child/&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;),</span><br><span class="line">  Child = React.createClass(&#123;</span><br><span class="line">   getInitialState:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">   &#125;,</span><br><span class="line">   render:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">     Child component</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
 <p>然后，只需要在dom中添加一个 Parent，它的子组件 Child 也会添加进去。</p>
-<h2 id="4_State">4 State</h2><p>state表示组件的状态，其实它是一个对象，可以像访问普通对象的方式一样访问它的属性。<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="keyword">state</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="4_State">4 State</h2><p>state 表示组件的状态，其实它是一个对象，可以像访问普通对象的方式一样访问它的属性。<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="keyword">state</span></span><br></pre></td></tr></table></figure></p>
 <p>但是如果想要修改state，必须使用下面这个函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="keyword">function</span>(<span class="params">state</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">    date:<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>需要注意的是，返回的对象并不会替代 state ，而是对它进行遍历，更新相同的属性。比如这里，返回的对象包含 date 这个属性，所以 state 的 date 属性会被更新。</p>
-<h2 id="5_控制组件局部的显示和隐藏">5 控制组件局部的显示和隐藏</h2><p>react支持三元表达式，可以用于显示/隐藏元素<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> return</span><br><span class="line">  <span class="variable">&lt;div&gt;</span></span><br><span class="line">   &#123;if(this.<span class="keyword">state</span>.title)?</span><br><span class="line">   <span class="variable">&lt;span&gt;</span>&#123;this.<span class="keyword">state</span>.title&#125;<span class="variable">&lt;/span&gt;</span></span><br><span class="line">   :null&#125;</span><br><span class="line">  <span class="variable">&lt;/div&gt;</span></span><br><span class="line">  ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，返回的对象并不会替代 state ，而是更新对应的属性。比如，返回的对象包含 date 这个属性，所以 state 的 date 属性会被更新。</p>
+<h2 id="5_控制组件局部的显示和隐藏">5 控制组件局部的显示和隐藏</h2><p>react 支持三元表达式，可以用于显示/隐藏元素<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> return</span><br><span class="line">  <span class="variable">&lt;div&gt;</span></span><br><span class="line">   &#123;if(this.<span class="keyword">state</span>.title)?</span><br><span class="line">   <span class="variable">&lt;span&gt;</span>&#123;this.<span class="keyword">state</span>.title&#125;<span class="variable">&lt;/span&gt;</span></span><br><span class="line">   :null&#125;</span><br><span class="line">  <span class="variable">&lt;/div&gt;</span></span><br><span class="line">  ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>如上，我们可以通过 title 的值，来决定是否显示 title。</p>
-<h2 id="6_组装渲染结果">6 组装渲染结果</h2><p>render函数的返回结果可以直接写好，获取，根据实际情况，动态组装<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> var vdom = [];</span><br><span class="line"> if(this.<span class="keyword">state</span>.needTitle)&#123;</span><br><span class="line">  vdom.push(<span class="variable">&lt;span&gt;</span>title<span class="variable">&lt;/span&gt;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> return <span class="variable">&lt;div&gt;</span>vdom<span class="variable">&lt;/div&gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="7_获取_dom_节点对象">7 获取 dom 节点对象</h2><p>有些时候，我们需要回去真实dom。可以预先指定 ref 属性<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> <span class="keyword">return</span></span><br><span class="line">  &lt;<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;input <span class="keyword">type</span>=<span class="string">"text"</span> <span class="keyword">ref</span>=<span class="string">"name"</span> name=<span class="string">"name"</span>/&gt;</span><br><span class="line">  &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="6_组装渲染结果">6 组装渲染结果</h2><p>render函数的返回结果可以直接写好，或者根据条件动态组装。<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> var vdom = [];</span><br><span class="line"> if(this.<span class="keyword">state</span>.needTitle)&#123;</span><br><span class="line">  vdom.push(<span class="variable">&lt;span&gt;</span>title<span class="variable">&lt;/span&gt;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> return <span class="variable">&lt;div&gt;</span>vdom<span class="variable">&lt;/div&gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="7_获取_dom_节点对象">7 获取 dom 节点对象</h2><p>有些时候，我们必须获取真实dom，比如获取输入框的值。</p>
+<p>指定 ref 属性<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> <span class="keyword">return</span></span><br><span class="line">  &lt;<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;input <span class="keyword">type</span>=<span class="string">"text"</span> <span class="keyword">ref</span>=<span class="string">"name"</span> name=<span class="string">"name"</span>/&gt;</span><br><span class="line">  &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>然后通过 ReactDOM.findDOMNode(ref值)<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> nameDom = ReactDOM.<span class="function"><span class="title">findDOMNode</span><span class="params">(this.refs.name)</span></span></span><br></pre></td></tr></table></figure></p>
 <p>nameDom 就是对应的 dom 对象</p>
 ]]></content>
@@ -58,14 +72,14 @@
     
     </summary>
     
-      <category term="学习笔记" scheme="http://dmoneh.github.io/silentsong/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://dmoneh.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[不常用的sql]]></title>
-    <link href="http://dmoneh.github.io/silentsong/2015/10/16/Not-commonly-used-sql/"/>
-    <id>http://dmoneh.github.io/silentsong/2015/10/16/Not-commonly-used-sql/</id>
+    <link href="http://dmoneh.github.io/2015/10/16/Not-commonly-used-sql/"/>
+    <id>http://dmoneh.github.io/2015/10/16/Not-commonly-used-sql/</id>
     <published>2015-10-16T06:22:47.000Z</published>
     <updated>2015-10-16T06:32:58.741Z</updated>
     <content type="html"><![CDATA[<p>不常用的是最难记住的。<br><a id="more"></a></p>
@@ -98,14 +112,14 @@
     
     </summary>
     
-      <category term="mysql" scheme="http://dmoneh.github.io/silentsong/tags/mysql/"/>
+      <category term="mysql" scheme="http://dmoneh.github.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[关于标识符]]></title>
-    <link href="http://dmoneh.github.io/silentsong/2015/09/21/common-identifier/"/>
-    <id>http://dmoneh.github.io/silentsong/2015/09/21/common-identifier/</id>
+    <link href="http://dmoneh.github.io/2015/09/21/common-identifier/"/>
+    <id>http://dmoneh.github.io/2015/09/21/common-identifier/</id>
     <published>2015-09-21T06:12:33.000Z</published>
     <updated>2015-09-21T06:33:29.729Z</updated>
     <content type="html"><![CDATA[<h4 id="标识符是什么">标识符是什么</h4><p>在编程语言中，标识符就是程序员自己规定的具有特定含义的词，比如类名称，属性名称，变量名等。一般我们用英文单词做标志符，常用动词或者名词。<br><a id="more"></a><br>比如</p>
@@ -125,14 +139,14 @@
     
     </summary>
     
-      <category term="标识符" scheme="http://dmoneh.github.io/silentsong/tags/%E6%A0%87%E8%AF%86%E7%AC%A6/"/>
+      <category term="标识符" scheme="http://dmoneh.github.io/tags/%E6%A0%87%E8%AF%86%E7%AC%A6/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[编程之约定]]></title>
-    <link href="http://dmoneh.github.io/silentsong/2015/09/21/convention-is-necessary/"/>
-    <id>http://dmoneh.github.io/silentsong/2015/09/21/convention-is-necessary/</id>
+    <link href="http://dmoneh.github.io/2015/09/21/convention-is-necessary/"/>
+    <id>http://dmoneh.github.io/2015/09/21/convention-is-necessary/</id>
     <published>2015-09-21T06:01:49.000Z</published>
     <updated>2015-09-21T07:17:07.759Z</updated>
     <content type="html"><![CDATA[<p>记得初学java，彻夜学习马士兵老师的教程，讲到struts 2时，马老师说道，真实的项目开发，命令约定非常重要。当时太年轻，并不明白这句话的真谛，但是还是默默记在心里。等到真正参与项目了，见识了很多因为不约定或者约定不一致而引发的争吵和矛盾，也见识了很多拥有优雅简练的约定的很棒的项目。有很多吐槽，这里就不说了。只是总结一下自己的经验吧。<br><a id="more"></a></p>
@@ -151,14 +165,14 @@
     
     </summary>
     
-      <category term="principle" scheme="http://dmoneh.github.io/silentsong/tags/principle/"/>
+      <category term="principle" scheme="http://dmoneh.github.io/tags/principle/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[curl 简单入门]]></title>
-    <link href="http://dmoneh.github.io/silentsong/2015/09/10/use-curl/"/>
-    <id>http://dmoneh.github.io/silentsong/2015/09/10/use-curl/</id>
+    <link href="http://dmoneh.github.io/2015/09/10/use-curl/"/>
+    <id>http://dmoneh.github.io/2015/09/10/use-curl/</id>
     <published>2015-09-10T03:31:28.000Z</published>
     <updated>2015-09-17T06:55:28.352Z</updated>
     <content type="html"><![CDATA[<h3 id="1-什么是_curl">1.什么是 curl</h3><p>curl 官方的说法是一种用来在客户端和服务器之间做数据传输的命令行。简单的说，你可以用下面这个命令，将百度首页的内容下载下来：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://baidu.com</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"refresh"</span> <span class="attribute">content</span>=<span class="value">"0;url=http://www.baidu.com/"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -221,14 +235,14 @@
     
     </summary>
     
-      <category term="curl" scheme="http://dmoneh.github.io/silentsong/tags/curl/"/>
+      <category term="curl" scheme="http://dmoneh.github.io/tags/curl/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Node 单元测试 - Mocha]]></title>
-    <link href="http://dmoneh.github.io/silentsong/2015/09/01/node-unit-test-by-mocha/"/>
-    <id>http://dmoneh.github.io/silentsong/2015/09/01/node-unit-test-by-mocha/</id>
+    <link href="http://dmoneh.github.io/2015/09/01/node-unit-test-by-mocha/"/>
+    <id>http://dmoneh.github.io/2015/09/01/node-unit-test-by-mocha/</id>
     <published>2015-09-01T08:17:24.000Z</published>
     <updated>2015-09-10T07:42:20.213Z</updated>
     <content type="html"><![CDATA[<h2 id="简介">简介</h2><p>mocha 是一个基于 nodejs 的单元测试框架。<br><a id="more"></a><br><a href="http://mochajs.org/" target="_blank" rel="external">mocha 官网</a></p>
@@ -292,14 +306,14 @@
     
     </summary>
     
-      <category term="node,unit test" scheme="http://dmoneh.github.io/silentsong/tags/node-unit-test/"/>
+      <category term="node,unit test" scheme="http://dmoneh.github.io/tags/node-unit-test/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Nodejs 内置的 unit test 模块 - assert]]></title>
-    <link href="http://dmoneh.github.io/silentsong/2015/09/01/node-assert-for-unit-test/"/>
-    <id>http://dmoneh.github.io/silentsong/2015/09/01/node-assert-for-unit-test/</id>
+    <link href="http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/"/>
+    <id>http://dmoneh.github.io/2015/09/01/node-assert-for-unit-test/</id>
     <published>2015-09-01T05:15:36.000Z</published>
     <updated>2015-09-10T05:03:36.683Z</updated>
     <content type="html"><![CDATA[<p>Nodejs 有一个叫做 <a href="https://nodejs.org/api/assert.html" target="_blank" rel="external">assert</a> 的模块，可以用来做简单的 断言。<br><a id="more"></a><br>下面是一个小例子。</p>
@@ -320,14 +334,14 @@
     
     </summary>
     
-      <category term="node,unit test" scheme="http://dmoneh.github.io/silentsong/tags/node-unit-test/"/>
+      <category term="node,unit test" scheme="http://dmoneh.github.io/tags/node-unit-test/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[前端也应该懂 curl]]></title>
-    <link href="http://dmoneh.github.io/silentsong/2015/08/27/frontend-should-know-curl/"/>
-    <id>http://dmoneh.github.io/silentsong/2015/08/27/frontend-should-know-curl/</id>
+    <link href="http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/"/>
+    <id>http://dmoneh.github.io/2015/08/27/frontend-should-know-curl/</id>
     <published>2015-08-27T04:22:43.000Z</published>
     <updated>2015-09-10T05:00:26.457Z</updated>
     <content type="html"><![CDATA[<p>有一天，pm询问我，生产环境上有一个 report 系统无法从客户端访问，到底是什么问题。<br><a id="more"></a></p>
@@ -345,7 +359,7 @@
     
     </summary>
     
-      <category term="curl" scheme="http://dmoneh.github.io/silentsong/tags/curl/"/>
+      <category term="curl" scheme="http://dmoneh.github.io/tags/curl/"/>
     
   </entry>
   
