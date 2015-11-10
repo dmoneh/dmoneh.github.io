@@ -90,7 +90,7 @@ var Parent = React.createClass({
 然后，只需要在dom中添加一个 Parent，它的子组件 Child 也会添加进去。
 
 ## 4 State
-state表示组件的状态，其实它是一个对象，可以像访问普通对象的方式一样访问它的属性。
+state 表示组件的状态，其实它是一个对象，可以像访问普通对象的方式一样访问它的属性。
 ```
 this.state
 ```
@@ -102,10 +102,10 @@ this.setState(function(state){
    }
 });
 ```
-需要注意的是，返回的对象并不会替代 state ，而是对它进行遍历，更新相同的属性。比如这里，返回的对象包含 date 这个属性，所以 state 的 date 属性会被更新。
+需要注意的是，返回的对象并不会替代 state ，而是更新对应的属性。比如，返回的对象包含 date 这个属性，所以 state 的 date 属性会被更新。
 
 ## 5 控制组件局部的显示和隐藏
-react支持三元表达式，可以用于显示/隐藏元素
+react 支持三元表达式，可以用于显示/隐藏元素
 ```
 render:function(){
  return
@@ -120,7 +120,7 @@ render:function(){
 如上，我们可以通过 title 的值，来决定是否显示 title。
 
 ## 6 组装渲染结果
-render函数的返回结果可以直接写好，获取，根据实际情况，动态组装
+render函数的返回结果可以直接写好，或者根据条件动态组装。
 ```
 render:function(){
  var vdom = [];
@@ -131,7 +131,9 @@ render:function(){
 }
 ```
 ## 7 获取 dom 节点对象
-有些时候，我们需要回去真实dom。可以预先指定 ref 属性
+有些时候，我们必须获取真实dom，比如获取输入框的值。
+
+指定 ref 属性
 ```
 render:function(){
  return

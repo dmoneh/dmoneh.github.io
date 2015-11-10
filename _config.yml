@@ -12,8 +12,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://dmoneh.github.io/silentsong
-root: /silentsong
+url: http://dmoneh.github.io/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -69,7 +69,7 @@ theme: hueman
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@dmoneh:dmoneh/silentsong
+  repo: git@dmoneh:dmoneh/dmoneh.github.io
   branch: gh-pages
 
 disqus_shortname: silentsong
