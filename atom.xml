@@ -32,7 +32,7 @@
     <link href="http://dmoneh.github.io/2015/11/09/react-notes/"/>
     <id>http://dmoneh.github.io/2015/11/09/react-notes/</id>
     <published>2015-11-09T13:15:21.000Z</published>
-    <updated>2015-11-10T01:40:02.280Z</updated>
+    <updated>2015-11-10T02:09:04.789Z</updated>
     <content type="html"><![CDATA[<p>（持续更新中）</p>
 <h1 id="环境准本">环境准本</h1><p>react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。</p>
 <p>学习react，从小练习开始。下面是一些做练习必备的东西。<br><a id="more"></a></p>
@@ -47,7 +47,7 @@
 <li>组件名必须以大写字母开始</li>
 <li>组件中至少要包含 getInitialState 和 render 两个函数才能正常功能</li>
 </ul>
-<p>上面提到真实存在的dom ，也就是 mydiv ，与之对应的就是 FirstComponent 这个虚拟dom，这也是react力推的技 - virtal dom。</p>
+<p>上面提到真实存在的dom ，也就是 mydiv ，与之对应的就是 FirstComponent 这个虚拟dom，这也是react力推的技术 - virtal dom。</p>
 <h2 id="2_传递数据">2 传递数据</h2><p>很多时候，我们需要向组件中传递一些数据。假设有一个数据对象 data<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.<span class="built_in">render</span><span class="params">(</span><br><span class="line"> &lt;FirstComponent outerData=&#123;data&#125;,</span><br><span class="line"> document.getElementById<span class="params">('mydiv')</span></span><br><span class="line">)</span>;</span><br></pre></td></tr></table></figure></p>
 <p>数据变量名必须用{}括起来。<br>然后在组件内部，通过 props 对象来获取数据。</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="keyword">this</span>.props.outerData;</span><br></pre></td></tr></table></figure>
