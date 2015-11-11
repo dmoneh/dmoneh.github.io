@@ -32,8 +32,8 @@
     <link href="http://dmoneh.github.io/2015/11/09/react-notes/"/>
     <id>http://dmoneh.github.io/2015/11/09/react-notes/</id>
     <published>2015-11-09T13:15:21.000Z</published>
-    <updated>2015-11-10T09:43:28.906Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/dmoneh/dmoneh.github.io/master/asserts/imgs/react-logo.png" alt="logo"><br>（持续更新中）</p>
+    <updated>2015-11-11T04:23:12.168Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/react-logo.png" alt="logo"><br>（持续更新中）</p>
 <h1 id="环境准备">环境准备</h1><p>react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。</p>
 <p>学习react，从小练习开始。下面是一些做练习必备的东西。<br><a id="more"></a></p>
 <ul>
@@ -66,7 +66,7 @@
 <p>nameDom 就是对应的 dom 对象。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="https://raw.githubusercontent.com/dmoneh/dmoneh.github.io/master/asserts/imgs/react-logo.png" alt="logo"><br>（持续更新中）</p>
+    <![CDATA[<p><img src="/images/react-logo.png" alt="logo"><br>（持续更新中）</p>
 <h1 id="环境准备">环境准备</h1><p>react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。</p>
 <p>学习react，从小练习开始。下面是一些做练习必备的东西。<br>]]>
     
