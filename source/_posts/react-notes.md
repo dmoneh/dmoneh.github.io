@@ -2,14 +2,18 @@ title: react 学习笔记
 date: 2015-11-09 21:15:21
 tags: 学习笔记
 ---
-![logo](https://raw.githubusercontent.com/dmoneh/dmoneh.github.io/master/asserts/imgs/react-logo.png)
+![](/images/react-logo.png)
 （持续更新中）
 # 环境准备
 
 react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。
 
-学习react，从小练习开始。下面是一些做练习必备的东西。
+下面是一些小例子，用于记录react的一些比较常用的特性，细节。
+
 <!--more-->
+
+# 准备本地环境
+开始写react脚本之前，需要一些相关的库。
 
 * react.js
 * react.dom.js
@@ -118,10 +122,10 @@ render:function(){
   ;
 }
 ```
-如上，我们可以通过 title 的值，来决定是否显示 title。
+如上，我们可以通过控制 title 的值，来决定是否显示这个标题
 
-## 6 组装渲染结果
-render函数的返回结果可以直接写好，或者根据条件动态组装。
+## 6 动态组装组件
+render函数的返回结果可以写死，或者根据条件动态组装。
 ```
 render:function(){
  var vdom = [];
