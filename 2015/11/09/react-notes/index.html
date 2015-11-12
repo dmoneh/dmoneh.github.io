@@ -7,21 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="（持续更新中）
 环境准备react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。
-学习react，从小练习开始。下面是一些做练习必备的东西。">
+下面是一些小例子，用于记录react的一些比较常用的特性，细节。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react 学习笔记">
 <meta property="og:url" content="http://dmoneh.github.io/2015/11/09/react-notes/index.html">
 <meta property="og:site_name" content="SilentSong">
 <meta property="og:description" content="（持续更新中）
 环境准备react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。
-学习react，从小练习开始。下面是一些做练习必备的东西。">
+下面是一些小例子，用于记录react的一些比较常用的特性，细节。">
 <meta property="og:image" content="http://dmoneh.github.io/images/react-logo.png">
-<meta property="og:updated_time" content="2015-11-11T09:46:06.335Z">
+<meta property="og:updated_time" content="2015-11-12T06:01:20.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react 学习笔记">
 <meta name="twitter:description" content="（持续更新中）
 环境准备react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。
-学习react，从小练习开始。下面是一些做练习必备的东西。">
+下面是一些小例子，用于记录react的一些比较常用的特性，细节。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -39,10 +39,12 @@
 
   
 
-  
+<!--   
     <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
     <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
+   -->
+    <link href='//fonts.googleapis.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
 </head>
 
@@ -115,7 +117,9 @@
       <div class="article-entry" itemprop="articleBody">
         <p><img src="/images/react-logo.png" alt=""><br>（持续更新中）</p>
 <h1 id="环境准备">环境准备</h1><p>react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。</p>
-<p>学习react，从小练习开始。下面是一些做练习必备的东西。<br><a id="more"></a></p>
+<p>下面是一些小例子，用于记录react的一些比较常用的特性，细节。</p>
+<a id="more"></a>
+<h1 id="准备本地环境">准备本地环境</h1><p>开始写react脚本之前，需要一些相关的库。</p>
 <ul>
 <li>react.js</li>
 <li>react.dom.js</li>
@@ -138,8 +142,8 @@
 <p>但是如果想要修改state，必须使用下面这个函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="keyword">function</span>(<span class="params">state</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">    date:<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>需要注意的是，返回的对象并不会替代 state ，而是更新对应的属性。比如，返回的对象包含 date 这个属性，所以 state 的 date 属性会被更新。</p>
 <h2 id="5_控制组件局部的显示和隐藏">5 控制组件局部的显示和隐藏</h2><p>react 支持三元表达式，可以用于显示/隐藏元素<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> return</span><br><span class="line">  <span class="variable">&lt;div&gt;</span></span><br><span class="line">   &#123;if(this.<span class="keyword">state</span>.title)?</span><br><span class="line">   <span class="variable">&lt;span&gt;</span>&#123;this.<span class="keyword">state</span>.title&#125;<span class="variable">&lt;/span&gt;</span></span><br><span class="line">   :null&#125;</span><br><span class="line">  <span class="variable">&lt;/div&gt;</span></span><br><span class="line">  ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如上，我们可以通过 title 的值，来决定是否显示 title。</p>
-<h2 id="6_组装渲染结果">6 组装渲染结果</h2><p>render函数的返回结果可以直接写好，或者根据条件动态组装。<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> var vdom = [];</span><br><span class="line"> if(this.<span class="keyword">state</span>.needTitle)&#123;</span><br><span class="line">  vdom.push(<span class="variable">&lt;span&gt;</span>title<span class="variable">&lt;/span&gt;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> return <span class="variable">&lt;div&gt;</span>vdom<span class="variable">&lt;/div&gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如上，我们可以通过控制 title 的值，来决定是否显示这个标题</p>
+<h2 id="6_动态组装组件">6 动态组装组件</h2><p>render函数的返回结果可以写死，或者根据条件动态组装。<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> var vdom = [];</span><br><span class="line"> if(this.<span class="keyword">state</span>.needTitle)&#123;</span><br><span class="line">  vdom.push(<span class="variable">&lt;span&gt;</span>title<span class="variable">&lt;/span&gt;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> return <span class="variable">&lt;div&gt;</span>vdom<span class="variable">&lt;/div&gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="7_获取_dom_节点对象">7 获取 dom 节点对象</h2><p>有些时候，我们必须获取真实dom，比如获取输入框的值。</p>
 <p>指定 ref 属性<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">render:function()&#123;</span><br><span class="line"> <span class="keyword">return</span></span><br><span class="line">  &lt;<span class="keyword">div</span>&gt;</span><br><span class="line">   &lt;input <span class="keyword">type</span>=<span class="string">"text"</span> <span class="keyword">ref</span>=<span class="string">"name"</span> name=<span class="string">"name"</span>/&gt;</span><br><span class="line">  &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>然后通过 ReactDOM.findDOMNode 来获取 dom 对象<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> nameDom = ReactDOM.<span class="function"><span class="title">findDOMNode</span><span class="params">(this.refs.name)</span></span></span><br></pre></td></tr></table></figure></p>
@@ -147,7 +151,7 @@
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://dmoneh.github.io/2015/11/09/react-notes/" data-id="cigum9g1a0007dsffx8xaeanq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://dmoneh.github.io/2015/11/09/react-notes/" data-id="cigvtrudt0007wkffya6ix170" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
           <a href="http://dmoneh.github.io/2015/11/09/react-notes/#comments" class="article-comment-link"><i class="fa fa-comments"></i>评论</a>
         
@@ -194,7 +198,7 @@
       <strong class="article-nav-caption">下一篇</strong>
       <p class="article-nav-title">
         
-          sequelize-notes
+          sequelize 笔记
         
       </p>
       <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -224,7 +228,8 @@
               
 <a href="/2015/11/09/sequelize-notes/" class="thumbnail">
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <span style="background-image:url(/images/sequelize-logo.png
+)" alt="sequelize 笔记" class="thumbnail-image"></span>
   
 </a>
 
@@ -232,7 +237,7 @@
             
             <div class="item-inner">
               <p class="item-category"></p>
-              <p class="item-title"><a href="/2015/11/09/sequelize-notes/" class="title">sequelize-notes</a></p>
+              <p class="item-title"><a href="/2015/11/09/sequelize-notes/" class="title">sequelize 笔记</a></p>
               <p class="item-date"><time datetime="2015-11-09T14:00:10.000Z" itemprop="datePublished">2015-11-09</time></p>
             </div>
           </li>
@@ -336,7 +341,7 @@
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/">curl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-unit-test/">node,unit test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/principle/">principle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标识符/">标识符</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/">curl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-unit-test/">node,unit test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-orm/">node-orm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/principle/">principle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标识符/">标识符</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -346,7 +351,7 @@
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/curl/" style="font-size: 20px;">curl</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/node-unit-test/" style="font-size: 20px;">node,unit test</a> <a href="/tags/principle/" style="font-size: 10px;">principle</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/标识符/" style="font-size: 10px;">标识符</a>
+      <a href="/tags/curl/" style="font-size: 20px;">curl</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/node-unit-test/" style="font-size: 20px;">node,unit test</a> <a href="/tags/node-orm/" style="font-size: 10px;">node-orm</a> <a href="/tags/principle/" style="font-size: 10px;">principle</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/标识符/" style="font-size: 10px;">标识符</a>
     </div>
   </div>
 

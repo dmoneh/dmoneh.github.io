@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>sequelize-notes | SilentSong</title>
+  <title>sequelize 笔记 | SilentSong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="介绍Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite and MSSQL。（持续更新中）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sequelize-notes">
+<meta property="og:title" content="sequelize 笔记">
 <meta property="og:url" content="http://dmoneh.github.io/2015/11/09/sequelize-notes/index.html">
 <meta property="og:site_name" content="SilentSong">
-<meta property="og:description">
-<meta property="og:updated_time" content="2015-11-09T14:00:10.432Z">
+<meta property="og:description" content="介绍Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite and MSSQL。（持续更新中）">
+<meta property="og:image" content="http://dmoneh.github.io/images/sequelize-logo.png">
+<meta property="og:updated_time" content="2015-11-12T07:07:40.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sequelize-notes">
-<meta name="twitter:description">
+<meta name="twitter:title" content="sequelize 笔记">
+<meta name="twitter:description" content="介绍Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite and MSSQL。（持续更新中）">
   
   
     <link rel="icon" href="/favicon.png">
@@ -32,10 +33,12 @@
 
   
 
-  
+<!--   
     <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
     <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
+   -->
+    <link href='//fonts.googleapis.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
 </head>
 
@@ -94,7 +97,7 @@
           
   
     <h1 class="article-title" itemprop="name">
-      sequelize-notes
+      sequelize 笔记
     </h1>
   
 
@@ -106,14 +109,47 @@
 </a>
       </p>
       <div class="article-entry" itemprop="articleBody">
-        
+        <p><img src="/images/sequelize-logo.png" alt=""></p>
+<h1 id="介绍">介绍</h1><p>Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite and MSSQL。<br>（持续更新中）<br><a id="more"></a></p>
+<p>事实上，有很多特性只是为了 postgresql 而存在，这也说明了 postgresql 越来越得到业界的认可。</p>
+<h1 id="关于promise">关于promise</h1><p>有一些程序员可能并不喜欢promise风格，这里’不顾羞耻’的推荐一下promise。 冰冻三尺非一日之寒，事实上使用promise的程序员可能也存在一些困惑，到底到底为啥要 promise 化呢。之后我会写一篇文章来‘同化’这些同学。</p>
+<h1 id="基本配置">基本配置</h1><p>说道orm，当然离不开数据库的配置，下面是一个简单的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</span><br><span class="line"><span class="keyword">var</span> sequelize = <span class="keyword">new</span> Sequelize(<span class="string">'database'</span>, <span class="string">'username'</span>, <span class="string">'password'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>Sequelize官方推荐用小写的 <strong><em>sequelize</em></strong> 来代表 orm 实例，个人觉得会引起一些不必要的歧义，可以尝试用其他命名。比如，就用 orm 。下面的说明都会使用 orm 这个名称。</p>
+<p>创建 instance 的时候，可以指定一些配置项，比如最大连接数，空闲时间，等等。<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> orm = <span class="literal">new</span> Sequelize(<span class="string">'database'</span>, <span class="string">'username'</span>, <span class="string">'password'</span>, &#123;</span><br><span class="line">  host: <span class="string">'localhost'</span>,</span><br><span class="line">  dialect: <span class="string">'mysql'</span>|<span class="string">'mariadb'</span>|<span class="string">'sqlite'</span>|<span class="string">'postgres'</span>|<span class="string">'mssql'</span>,</span><br><span class="line"></span><br><span class="line">  pool: &#123;</span><br><span class="line">    <span class="keyword">max</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="keyword">min</span>: <span class="number">0</span>,</span><br><span class="line">    idle: <span class="number">10000</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// SQLite only</span></span><br><span class="line">  storage: <span class="string">'path/to/database.sqlite'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>然后导出，定义model只需要它就好了<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">module</span>.<span class="title">exports</span> =</span> orm;</span><br></pre></td></tr></table></figure></p>
+<h1 id="数据模型">数据模型</h1><p>可以使用 instance.define创建model<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> student = orm<span class="built_in">.</span><span class="class"><span class="keyword">define</span></span>(<span class="string">'student'</span>,&#123;</span><br><span class="line">  id:&#123;</span><br><span class="line">   <span class="keyword">type</span>:Sequelize<span class="built_in">.</span><span class="built_in">INTEGER</span>,</span><br><span class="line">   primaryKey:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  name:&#123;</span><br><span class="line">   <span class="keyword">type</span>:Sequelize<span class="built_in">.</span><span class="built_in">STRING</span></span><br><span class="line">  &#125;</span><br><span class="line"> &#125;,&#123;</span><br><span class="line"> tableName:<span class="string">'student'</span></span><br><span class="line"> &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>这样就定义了一个model，它有很多方便的方法。</p>
+<ul>
+<li>find</li>
+<li>findAll</li>
+<li>findOne</li>
+<li>destory</li>
+<li>update<br>可以到参考<a href="http://sequelize.readthedocs.org/en/latest/api/model/" target="_blank" rel="external">官网说明</a></li>
+</ul>
+<p>因为官方文档的语焉不详，下面是一些补充</p>
+<h2 id="include">include</h2><p>include用于连接查询，比如有一个班级（grade）model<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> student = orm<span class="built_in">.</span><span class="class"><span class="keyword">define</span></span>(<span class="string">'student'</span>,&#123;</span><br><span class="line">  id:&#123;</span><br><span class="line">   <span class="keyword">type</span>:Sequelize<span class="built_in">.</span><span class="built_in">INTEGER</span>,</span><br><span class="line">   primaryKey:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  name:&#123;</span><br><span class="line">   <span class="keyword">type</span>:Sequelize<span class="built_in">.</span><span class="built_in">STRING</span></span><br><span class="line">  &#125;,</span><br><span class="line">  gradeId:&#123;</span><br><span class="line">   <span class="keyword">type</span>:Sequelize<span class="built_in">.</span><span class="built_in">INTEGER</span></span><br><span class="line">  &#125;</span><br><span class="line"> &#125;,&#123;</span><br><span class="line"> tableName:<span class="string">'student'</span></span><br><span class="line"> &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="built_in">var</span> grade = orm<span class="built_in">.</span><span class="class"><span class="keyword">define</span></span>(<span class="string">'grade'</span>,&#123;</span><br><span class="line">  id:&#123;</span><br><span class="line">   <span class="keyword">type</span>:Sequelize<span class="built_in">.</span><span class="built_in">INTEGER</span>,</span><br><span class="line">   primaryKey:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  name:&#123;</span><br><span class="line">   <span class="keyword">type</span>:Sequelize:<span class="built_in">STRING</span></span><br><span class="line">  &#125;</span><br><span class="line"> &#125;,&#123;</span><br><span class="line">  tableName:<span class="string">'grade'</span></span><br><span class="line"> &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>我们想查询学生和其所属的班级名称，如果是写sql，就是一个连接查询。<br>如果用sequelize做类似的查询，我们需要先指定这两个model的关系<a href="http://sequelize.readthedocs.org/en/latest/docs/associations/" target="_blank" rel="external">associations</a>。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">student</span><span class="class">.belongsTo</span>(<span class="tag">grade</span>,<span class="rules">&#123;</span><br><span class="line"> <span class="rule"><span class="attribute">foreignKey</span>:<span class="value"><span class="string">'gradeId'</span></span><br><span class="line">&#125;)</span></span>;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果不指定foreignKey,Sequelize会自己去判断哪个是外键，这样可能会和实际情况并不相符。我推荐手动指定外键。当然，如果你喜欢用Sequelize生成表结果，那这个可以不用担心。这里介绍的是，数据库已经存在的情况下。<br>然后，我们可以使用incldue来查询信息。<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">student.findOne(&#123;</span><br><span class="line"> where:&#123;</span><br><span class="line">  id:<span class="number">91</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="keyword">include</span>:[</span><br><span class="line">  &#123;</span><br><span class="line">   model:grade</span><br><span class="line">  &#125;</span><br><span class="line"> ]</span><br><span class="line">&#125;).then(function(<span class="literal">result</span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125;).catch(function(err)&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>result就是返回的值，Sequelize官方叫做 instance，可以认为是 model 的一个实例。它也有很多常用的<a href="http://sequelize.readthedocs.org/en/latest/api/instance/" target="_blank" rel="external">方法</a>，用于获取数据。</p>
+<h2 id="getter_setter_方法">getter setter 方法</h2><p>有些时候，我们需要在对model进行存取之前，进行数据转换，比如，学生的爱好是一个数组，但是我们使用的数据库并不支持数组。这个时候，可以通过setter方法，在数据存储之前自动转型成字符串；通过getter，在查询成功之后自动又转回数组类型。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> student = orm.define(<span class="string">'student'</span>,&#123;</span><br><span class="line">  hobbies:&#123;</span><br><span class="line">   type:Sequelize.STRING,</span><br><span class="line">   <span class="keyword">get</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.getDataValue(<span class="string">'hobbies'</span>).split(<span class="string">','</span>);</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="keyword">set</span>: <span class="function"><span class="keyword">function</span><span class="params">(hobbies)</span></span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.setDataValue(<span class="string">'hobbies'</span>,hobbies.toString());</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;,&#123;</span><br><span class="line"> tableName:<span class="string">'student'</span></span><br><span class="line"> &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>这样其实相当于变相的提供了数组类型存储的支持。对于调用 student model的程序来说，hobbies就是一个数组类型的字段。</p>
+<p>这里为了叙述方便，省略了其他的字段。</p>
+<h2 id="raw_query">raw query</h2><p>orm并不能解决所有的问题，很少的情况下，我们需要手写sql表达式。<br>orm.query(‘select * from student where id = ?’,{<br> replacements:[91],<br> type: orm.QueryTypes.SELECT<br>});<br>当然上面的sql没有必要用 raw query，这只是一个例子。<br>这里的sql也可以是非查询语句，但是支持不大好，慎用。</p>
+<h2 id="还在更新">还在更新</h2><p>Sequelize还在更新，我的项目也在继续，未来肯定有更多的发现和心得，会持续的分享到这里。谢谢。</p>
+<h1 id="参考文献">参考文献</h1><ul>
+<li><a href="http://sequelize.readthedocs.org/en/latest/" target="_blank" rel="external">sequelize docs</a></li>
+</ul>
+
       </div>
       <footer class="article-footer">
-        <a data-url="http://dmoneh.github.io/2015/11/09/sequelize-notes/" data-id="cigum9g170006dsffb0um0f8s" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://dmoneh.github.io/2015/11/09/sequelize-notes/" data-id="cigvtrudq0006wkffaukgqus9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
           <a href="http://dmoneh.github.io/2015/11/09/sequelize-notes/#comments" class="article-comment-link"><i class="fa fa-comments"></i>评论</a>
         
         
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-orm/">node-orm</a></li></ul>
+
       </footer>
     </div>
   </article>
@@ -174,7 +210,8 @@
               
 <a href="/2015/11/09/sequelize-notes/" class="thumbnail">
   
-    <span class="thumbnail-image thumbnail-none"></span>
+    <span style="background-image:url(/images/sequelize-logo.png
+)" alt="sequelize 笔记" class="thumbnail-image"></span>
   
 </a>
 
@@ -182,7 +219,7 @@
             
             <div class="item-inner">
               <p class="item-category"></p>
-              <p class="item-title"><a href="/2015/11/09/sequelize-notes/" class="title">sequelize-notes</a></p>
+              <p class="item-title"><a href="/2015/11/09/sequelize-notes/" class="title">sequelize 笔记</a></p>
               <p class="item-date"><time datetime="2015-11-09T14:00:10.000Z" itemprop="datePublished">2015-11-09</time></p>
             </div>
           </li>
@@ -286,7 +323,7 @@
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/">curl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-unit-test/">node,unit test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/principle/">principle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标识符/">标识符</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/">curl</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-unit-test/">node,unit test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-orm/">node-orm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/principle/">principle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标识符/">标识符</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -296,7 +333,7 @@
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/curl/" style="font-size: 20px;">curl</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/node-unit-test/" style="font-size: 20px;">node,unit test</a> <a href="/tags/principle/" style="font-size: 10px;">principle</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/标识符/" style="font-size: 10px;">标识符</a>
+      <a href="/tags/curl/" style="font-size: 20px;">curl</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/node-unit-test/" style="font-size: 20px;">node,unit test</a> <a href="/tags/node-orm/" style="font-size: 10px;">node-orm</a> <a href="/tags/principle/" style="font-size: 10px;">principle</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/标识符/" style="font-size: 10px;">标识符</a>
     </div>
   </div>
 
