@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://dmoneh.github.io/"/>
-  <updated>2015-11-12T08:00:08.688Z</updated>
+  <updated>2015-11-15T05:06:11.154Z</updated>
   <id>http://dmoneh.github.io/</id>
   
   <author>
@@ -13,6 +13,19 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[react native notes]]></title>
+    <link href="http://dmoneh.github.io/2015/11/15/react-native-notes/"/>
+    <id>http://dmoneh.github.io/2015/11/15/react-native-notes/</id>
+    <published>2015-11-15T05:06:11.000Z</published>
+    <updated>2015-11-15T05:06:11.154Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[sequelize 笔记]]></title>
