@@ -5,17 +5,17 @@
   
   <title>sequelize 笔记 | SilentSong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="介绍Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite and MSSQL。（持续更新中）">
+  <meta name="description" content="介绍Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite, MSSQL。（持续更新中）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sequelize 笔记">
 <meta property="og:url" content="http://dmoneh.github.io/2015/11/09/sequelize-notes/index.html">
 <meta property="og:site_name" content="SilentSong">
-<meta property="og:description" content="介绍Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite and MSSQL。（持续更新中）">
+<meta property="og:description" content="介绍Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite, MSSQL。（持续更新中）">
 <meta property="og:image" content="http://dmoneh.github.io/images/sequelize-logo.png">
-<meta property="og:updated_time" content="2015-11-12T08:00:08.688Z">
+<meta property="og:updated_time" content="2015-11-15T05:12:36.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sequelize 笔记">
-<meta name="twitter:description" content="介绍Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite and MSSQL。（持续更新中）">
+<meta name="twitter:description" content="介绍Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite, MSSQL。（持续更新中）">
   
   
     <link rel="icon" href="/favicon.png">
@@ -110,9 +110,9 @@
       </p>
       <div class="article-entry" itemprop="articleBody">
         <p><img src="/images/sequelize-logo.png" alt=""></p>
-<h1 id="介绍">介绍</h1><p>Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite and MSSQL。<br>（持续更新中）<br><a id="more"></a></p>
+<h1 id="介绍">介绍</h1><p>Sequelize是一个promise风格的 node orm。支持常见的关系型数据库，比如 MariaDB, SQLite, MSSQL。<br>（持续更新中）<br><a id="more"></a></p>
 <p>事实上，有很多特性只是为了 postgresql 而存在，这也说明了 postgresql 越来越得到业界的认可。</p>
-<h1 id="关于promise">关于promise</h1><p>有一些程序员可能并不喜欢promise风格，这里’不顾羞耻’的推荐一下promise。 冰冻三尺非一日之寒，事实上使用promise的程序员可能也存在一些困惑，到底到底为啥要 promise 化呢。之后我会写一篇文章来‘同化’这些同学。</p>
+<h1 id="关于promise">关于promise</h1><p>有一些程序员可能并不喜欢promise风格，这里’不顾羞耻’的推荐一下promise。 从 callback 到 promise 的转变是可能是困难的，事实上使用promise的程序员可能也存在一些困惑，到底到底为啥要 promise 化呢。之后我会写一篇文章来‘同化’这些同学。</p>
 <h1 id="基本配置">基本配置</h1><p>说道orm，当然离不开数据库的配置，下面是一个简单的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</span><br><span class="line"><span class="keyword">var</span> sequelize = <span class="keyword">new</span> Sequelize(<span class="string">'database'</span>, <span class="string">'username'</span>, <span class="string">'password'</span>);</span><br></pre></td></tr></table></figure></p>
 <p>Sequelize官方推荐用小写的 <strong><em>sequelize</em></strong> 来代表 orm 实例，个人觉得会引起一些不必要的歧义，可以尝试用其他命名。比如，就用 orm 。下面的说明都会使用 orm 这个名称。</p>
 <p>创建 instance 的时候，可以指定一些配置项，比如最大连接数，空闲时间，等等。<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> orm = <span class="literal">new</span> Sequelize(<span class="string">'database'</span>, <span class="string">'username'</span>, <span class="string">'password'</span>, &#123;</span><br><span class="line">  host: <span class="string">'localhost'</span>,</span><br><span class="line">  dialect: <span class="string">'mysql'</span>|<span class="string">'mariadb'</span>|<span class="string">'sqlite'</span>|<span class="string">'postgres'</span>|<span class="string">'mssql'</span>,</span><br><span class="line"></span><br><span class="line">  pool: &#123;</span><br><span class="line">    <span class="keyword">max</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="keyword">min</span>: <span class="number">0</span>,</span><br><span class="line">    idle: <span class="number">10000</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// SQLite only</span></span><br><span class="line">  storage: <span class="string">'path/to/database.sqlite'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
@@ -135,7 +135,8 @@
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> student = orm.define(<span class="string">'student'</span>,&#123;</span><br><span class="line">  hobbies:&#123;</span><br><span class="line">   type:Sequelize.STRING,</span><br><span class="line">   <span class="keyword">get</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.getDataValue(<span class="string">'hobbies'</span>).split(<span class="string">','</span>);</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="keyword">set</span>: <span class="function"><span class="keyword">function</span><span class="params">(hobbies)</span></span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.setDataValue(<span class="string">'hobbies'</span>,hobbies.toString());</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;,&#123;</span><br><span class="line"> tableName:<span class="string">'student'</span></span><br><span class="line"> &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>这样其实相当于变相的提供了数组类型存储的支持。对于调用 student model的程序来说，hobbies就是一个数组类型的字段。</p>
 <p>这里为了叙述方便，省略了其他的字段。</p>
-<h2 id="raw_query">raw query</h2><p>orm并不能解决所有的问题，很少的情况下，我们需要手写sql表达式。<br>orm.query(‘select * from student where id = ?’,{<br> replacements:[91],<br> type: orm.QueryTypes.SELECT<br>});<br>当然上面的sql没有必要用 raw query，这只是一个例子。<br>这里的sql也可以是非查询语句，但是支持不大好，慎用。</p>
+<h2 id="raw_query">raw query</h2><p>orm并不能解决所有的问题，很少的情况下，我们需要手写sql表达式。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">orm</span><span class="class">.query</span>(<span class="string">'select * from student where id = ?'</span>,&#123;</span><br><span class="line"> <span class="attribute">replacements</span>:[<span class="number">91</span>],</span><br><span class="line"> <span class="attribute">type</span>: orm.QueryTypes.SELECT</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>当然上面的sql没有必要用 raw query，这只是一个例子。<br>这里的sql也可以是非查询语句，但是支持不大好，慎用。</p>
 <h2 id="还在更新">还在更新</h2><p>Sequelize还在更新，我的项目也在继续，未来肯定有更多的发现和心得，会持续的分享到这里。谢谢。</p>
 <h1 id="参考文献">参考文献</h1><ul>
 <li><a href="http://sequelize.readthedocs.org/en/latest/" target="_blank" rel="external">sequelize docs</a></li>
@@ -143,7 +144,7 @@
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://dmoneh.github.io/2015/11/09/sequelize-notes/" data-id="cih027vc0000648ffnui0gt11" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        <a data-url="http://dmoneh.github.io/2015/11/09/sequelize-notes/" data-id="cih02dcic0006ngff7gcyg8eq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
         
           <a href="http://dmoneh.github.io/2015/11/09/sequelize-notes/#comments" class="article-comment-link"><i class="fa fa-comments"></i>评论</a>
         
