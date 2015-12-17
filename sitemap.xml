@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://dmoneh.github.io/2015/11/09/sequelize-notes/</loc>
-    <lastmod>2015-11-15T05:12:36.087Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://dmoneh.github.io/2015/11/15/react-native-notes/</loc>
-    <lastmod>2015-11-15T05:06:11.154Z</lastmod>
+    <lastmod>2015-12-17T15:33:25.897Z</lastmod>
   </url>
   
   <url>
     <loc>http://dmoneh.github.io/2015/11/09/react-notes/</loc>
-    <lastmod>2015-11-12T06:01:20.335Z</lastmod>
+    <lastmod>2015-12-17T15:30:42.896Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://dmoneh.github.io/2015/11/09/sequelize-notes/</loc>
+    <lastmod>2015-11-15T05:12:36.087Z</lastmod>
   </url>
   
   <url>

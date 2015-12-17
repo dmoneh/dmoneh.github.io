@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://dmoneh.github.io/"/>
-  <updated>2015-11-15T05:06:11.154Z</updated>
+  <updated>2015-12-17T15:33:25.897Z</updated>
   <id>http://dmoneh.github.io/</id>
   
   <author>
@@ -19,11 +19,15 @@
     <link href="http://dmoneh.github.io/2015/11/15/react-native-notes/"/>
     <id>http://dmoneh.github.io/2015/11/15/react-native-notes/</id>
     <published>2015-11-15T05:06:11.000Z</published>
-    <updated>2015-11-15T05:06:11.154Z</updated>
+    <updated>2015-12-17T15:33:25.897Z</updated>
     <content type="html"></content>
     <summary type="html">
     
     </summary>
+    
+      <category term="react native" scheme="http://dmoneh.github.io/tags/react-native/"/>
+    
+      <category term="学习笔记" scheme="http://dmoneh.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -81,7 +85,7 @@
     <link href="http://dmoneh.github.io/2015/11/09/react-notes/"/>
     <id>http://dmoneh.github.io/2015/11/09/react-notes/</id>
     <published>2015-11-09T13:15:21.000Z</published>
-    <updated>2015-11-12T06:01:20.335Z</updated>
+    <updated>2015-12-17T15:30:42.896Z</updated>
     <content type="html"><![CDATA[<p><img src="/images/react-logo.png" alt=""><br>（持续更新中）</p>
 <h1 id="环境准备">环境准备</h1><p>react是facebook出品的前端lib，利用它，可以非常方面的创建功能强大的组件。</p>
 <p>下面是一些小例子，用于记录react的一些比较常用的特性，细节。</p>
@@ -123,7 +127,9 @@
     
     </summary>
     
-      <category term="学习笔记" scheme="http://dmoneh.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="react" scheme="http://dmoneh.github.io/tags/react/"/>
+    
+      <category term="学习笔记" scheme="http://dmoneh.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
